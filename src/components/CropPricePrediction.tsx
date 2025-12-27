@@ -45,7 +45,7 @@ interface SoilCharacteristics {
 
 const CROPS = ['Rice', 'Moong', 'Brinjal', 'Groundnut', 'Cotton', 'Sugarcane', 'Wheat', 'Maize', 'Onion', 'Onion-Bhima Super', 'Onion-bhima shweta', 'Tomato'];
 
-// Real crop-soil suitability data based on Odisha agricultural practices
+// Real crop-soil suitability data based on Tamil Nadu agricultural practices
 const CROP_SOIL_SUITABILITY = {
     "Rice": {
         best: ["Deltaic Alluvial", "Mixed Red and Yellow"],
@@ -121,11 +121,11 @@ const CROP_SOIL_SUITABILITY = {
     }
 };
 
-// Real soil characteristics data from Odisha
+// Real soil characteristics data from Tamil Nadu
 const SOIL_CHARACTERISTICS: Record<string, SoilCharacteristics> = {
     "Deltaic Alluvial": {
         name: "Deltaic Alluvial Soil",
-        description: "Highly fertile soil formed by river deposits in delta regions, particularly along the Mahanadi, Brahmani, and Baitarani river deltas.",
+        description: "Highly fertile soil formed by river deposits in delta regions, particularly along the Cauvery and Palar river deltas.",
         texture: "Loamy to clayey",
         color: "Dark grey to brown",
         ph_range: "6.5-7.5",
@@ -152,7 +152,7 @@ const SOIL_CHARACTERISTICS: Record<string, SoilCharacteristics> = {
             reason: "Superior fertility and water retention lead to higher yields and better quality crops, commanding premium prices"
         },
         management: "Requires proper drainage management during monsoon. Ideal for intensive agriculture.",
-        districts: ["Cuttack", "Jagatsinghpur", "Kendrapara", "Puri", "Balasore"]
+        districts: ["Thanjavur", "Tiruvarur", "Nagapattinam", "Mayiladuthurai", "Cuddalore"]
     },
     "Coastal Saline": {
         name: "Coastal Saline Soil",
@@ -183,7 +183,7 @@ const SOIL_CHARACTERISTICS: Record<string, SoilCharacteristics> = {
             reason: "High salinity reduces crop yield and quality. Requires expensive soil amendments and salt-tolerant varieties, lowering market value"
         },
         management: "Needs gypsum application, organic matter addition, and proper drainage. Growing salt-tolerant crops recommended.",
-        districts: ["Puri", "Balasore", "Kendrapara", "Jagatsinghpur"]
+        districts: ["Nagapattinam", "Thoothukudi", "Ramanathapuram", "Cuddalore"]
     },
     "Black": {
         name: "Black Cotton Soil (Vertisols)",
@@ -214,7 +214,7 @@ const SOIL_CHARACTERISTICS: Record<string, SoilCharacteristics> = {
             reason: "Excellent nutrient retention and moisture holding capacity result in consistent yields and superior crop quality, especially for cotton and pulses"
         },
         management: "Requires careful water management. Best suited for rainfed crops. Avoid over-irrigation.",
-        districts: ["Sambalpur", "Bargarh", "Bolangir", "Kalahandi", "Puri"]
+        districts: ["Erode", "Salem", "Dharmapuri", "Krishnagiri", "Tiruppur"]
     },
     "Red": {
         name: "Red Lateritic Soil",
@@ -245,7 +245,7 @@ const SOIL_CHARACTERISTICS: Record<string, SoilCharacteristics> = {
             reason: "Moderate fertility requires balanced fertilization. With proper management, yields are good but not exceptional, resulting in average market prices"
         },
         management: "Needs regular organic matter addition and balanced fertilization. Mulching recommended to prevent erosion.",
-        districts: ["Koraput", "Rayagada", "Gajapati", "Kandhamal", "Mayurbhanj"]
+        districts: ["Nilgiris", "Coimbatore", "Dindigul", "Theni", "Kanyakumari"]
     },
     "Laterite": {
         name: "Laterite Soil",
@@ -276,7 +276,7 @@ const SOIL_CHARACTERISTICS: Record<string, SoilCharacteristics> = {
             reason: "Low fertility and acidic pH reduce crop yields. Requires extensive soil amendments and lime application, increasing production costs and lowering profitability"
         },
         management: "Lime application essential. Grow acid-tolerant crops. Add organic matter regularly. Prevent hardpan formation.",
-        districts: ["Khurda", "Puri", "Ganjam", "Nayagarh", "Mayurbhanj"]
+        districts: ["Kanchipuram", "Chengalpattu", "Tiruvallur", "Villupuram", "Vellore"]
     },
     "Mixed Red and Yellow": {
         name: "Mixed Red and Yellow Soil",
@@ -307,7 +307,7 @@ const SOIL_CHARACTERISTICS: Record<string, SoilCharacteristics> = {
             reason: "Balanced nutrient profile and good physical properties support healthy crop growth. Moderate input costs with good yields result in favorable market returns"
         },
         management: "Balanced fertilization recommended. Crop rotation beneficial. Maintain organic matter levels.",
-        districts: ["Sambalpur", "Dhenkanal", "Angul", "Sundargarh", "Keonjhar"]
+        districts: ["Tiruchirappalli", "Karur", "Namakkal", "Pudukkottai", "Ariyalur"]
     },
     "Mixed Red and Black": {
         name: "Mixed Red and Black Soil",
@@ -338,7 +338,7 @@ const SOIL_CHARACTERISTICS: Record<string, SoilCharacteristics> = {
             reason: "High nutrient content and excellent moisture retention enable superior crop quality and yields. Versatility for multiple crops enhances market value"
         },
         management: "Maintain soil structure through organic matter. Balanced NPK application. Suitable for intensive cropping.",
-        districts: ["Sambalpur", "Bargarh", "Nuapada", "Bolangir", "Sonepur"]
+        districts: ["Madurai", "Virudhunagar", "Sivaganga", "Ramanathapuram", "Tenkasi"]
     },
     "Brown Forest": {
         name: "Brown Forest Soil",
@@ -369,7 +369,7 @@ const SOIL_CHARACTERISTICS: Record<string, SoilCharacteristics> = {
             reason: "Good organic content supports healthy crops. Suitable for high-value spices and vegetables. Moderate yields with quality produce fetch reasonable prices"
         },
         management: "Prevent soil erosion through terracing. Maintain forest cover. Add lime if too acidic. Suitable for organic farming.",
-        districts: ["Mayurbhanj", "Keonjhar", "Kandhamal", "Rayagada", "Koraput"]
+        districts: ["Vellore", "Ranipet", "Tirupathur", "Tiruvannamalai", "Krishnagiri"]
     }
 };
 
@@ -402,7 +402,7 @@ const CropPricePrediction = () => {
     // Fetch soils when district changes
     useEffect(() => {
         if (!selectedDistrict) return;
-        
+
         fetch(`http://localhost:5001/soils/${selectedDistrict}`)
             .then(res => res.json())
             .then(data => {
@@ -417,9 +417,9 @@ const CropPricePrediction = () => {
     // Get recommended crops based on selected soil
     const getRecommendedCrops = () => {
         if (!selectedSoil) return [];
-        
-        const recommendations: Array<{crop: string, suitability: 'best' | 'good', data: any}> = [];
-        
+
+        const recommendations: Array<{ crop: string, suitability: 'best' | 'good', data: any }> = [];
+
         Object.entries(CROP_SOIL_SUITABILITY).forEach(([crop, data]) => {
             if (data.best.some(soil => selectedSoil.includes(soil) || soil.includes(selectedSoil))) {
                 recommendations.push({ crop, suitability: 'best', data });
@@ -427,7 +427,7 @@ const CropPricePrediction = () => {
                 recommendations.push({ crop, suitability: 'good', data });
             }
         });
-        
+
         // Sort: best first, then by crop name
         return recommendations.sort((a, b) => {
             if (a.suitability === b.suitability) return a.crop.localeCompare(b.crop);
@@ -546,8 +546,8 @@ const CropPricePrediction = () => {
                         </div>
                     </div>
 
-                    <Button 
-                        onClick={calculatePrediction} 
+                    <Button
+                        onClick={calculatePrediction}
                         className="w-full bg-emerald-600 hover:bg-emerald-700"
                         disabled={loading || !selectedCrop || !selectedDistrict || !selectedSoil}
                     >
@@ -667,8 +667,8 @@ const CropPricePrediction = () => {
                                         <span className="text-slate-600">{t('cropPrediction.fertility')}:</span>
                                         <Badge className={
                                             soilData.fertility.includes('High') ? 'bg-green-600' :
-                                            soilData.fertility.includes('Medium') ? 'bg-yellow-600' :
-                                            'bg-red-600'
+                                                soilData.fertility.includes('Medium') ? 'bg-yellow-600' :
+                                                    'bg-red-600'
                                         }>{soilData.fertility}</Badge>
                                     </div>
                                 </div>
@@ -698,13 +698,12 @@ const CropPricePrediction = () => {
                         </div>
 
                         {/* Price Influence */}
-                        <div className={`p-4 rounded-lg border-2 ${
-                            soilData.price_influence.factor === 'Positive' 
-                                ? 'bg-green-50 border-green-300' 
+                        <div className={`p-4 rounded-lg border-2 ${soilData.price_influence.factor === 'Positive'
+                                ? 'bg-green-50 border-green-300'
                                 : soilData.price_influence.factor === 'Negative'
-                                ? 'bg-red-50 border-red-300'
-                                : 'bg-yellow-50 border-yellow-300'
-                        }`}>
+                                    ? 'bg-red-50 border-red-300'
+                                    : 'bg-yellow-50 border-yellow-300'
+                            }`}>
                             <h4 className="font-semibold text-sm mb-2 flex items-center gap-2">
                                 {soilData.price_influence.factor === 'Positive' ? (
                                     <><TrendingUp className="w-4 h-4 text-green-600" /> <span className="text-green-900">{t('cropPrediction.positivePriceImpact')}</span></>
@@ -718,8 +717,8 @@ const CropPricePrediction = () => {
                                 <div className="flex items-center gap-2">
                                     <Badge className={
                                         soilData.price_influence.factor === 'Positive' ? 'bg-green-600' :
-                                        soilData.price_influence.factor === 'Negative' ? 'bg-red-600' :
-                                        'bg-yellow-600'
+                                            soilData.price_influence.factor === 'Negative' ? 'bg-red-600' :
+                                                'bg-yellow-600'
                                     }>
                                         {soilData.price_influence.impact}
                                     </Badge>
@@ -767,17 +766,16 @@ const CropPricePrediction = () => {
                     <CardContent>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {recommendedCrops.map(({ crop, suitability, data }) => (
-                                <div 
+                                <div
                                     key={crop}
-                                    className={`p-4 rounded-lg border-2 ${
-                                        suitability === 'best' 
-                                            ? 'bg-emerald-50 border-emerald-300' 
+                                    className={`p-4 rounded-lg border-2 ${suitability === 'best'
+                                            ? 'bg-emerald-50 border-emerald-300'
                                             : 'bg-white border-slate-200'
-                                    }`}
+                                        }`}
                                 >
                                     <div className="flex items-start justify-between mb-2">
                                         <h3 className="font-semibold text-lg text-slate-800">{crop}</h3>
-                                        <Badge 
+                                        <Badge
                                             className={
                                                 suitability === 'best'
                                                     ? 'bg-emerald-600 text-white'

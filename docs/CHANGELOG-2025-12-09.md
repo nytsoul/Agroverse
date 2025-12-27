@@ -1,4 +1,4 @@
-# FarmLedge – Work Log (2025-12-09)
+# AgroVerse – Work Log (2025-12-09)
 
 ## What changed today
 - Navigation: Added a single **Services** dropdown that contains `Weather Alerts` and `Government Schemes`; removed overlapping standalone links.

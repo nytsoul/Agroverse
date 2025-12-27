@@ -49,7 +49,7 @@ export function DistributorIotAlerts({
   const [loading, setLoading] = useState(true);
   const [simulating, setSimulating] = useState(false);
   const [error, setError] = useState<string | null>(null);
-    const [isDistributor, setIsDistributor] = useState(false); // ADD THIS LINE
+  const [isDistributor, setIsDistributor] = useState(false); // ADD THIS LINE
 
   const { toast } = useToast();
   const { address } = useAccount();
@@ -57,7 +57,7 @@ export function DistributorIotAlerts({
   // Check if batch is still with distributor (not moved to retailer/consumer)
   const isBatchWithDistributor = currentOwner && distributorAddress &&
     currentOwner.toLowerCase() === distributorAddress.toLowerCase();
-  
+
   // Show simulate button if batch is with ANY distributor (for demo/testing)
   const canSimulate = isBatchWithDistributor;
 
@@ -69,8 +69,7 @@ export function DistributorIotAlerts({
         return;
       }
       try {
-        const apiBase = import.meta.env.VITE_API_BASE_URL || "http://localhost:3001";
-        const res = await fetch(`${apiBase}/api/user/role/${address}`);
+        const res = await fetch(`/api/user/role/${address}`);
         const data = await res.json();
         setIsDistributor(data.role === "distributor");
       } catch (err) {
@@ -81,7 +80,7 @@ export function DistributorIotAlerts({
     checkRole();
   }, [address]);
 
-  
+
 
   // Fetch alerts for this batch
   const loadAlerts = async () => {
@@ -89,9 +88,8 @@ export function DistributorIotAlerts({
       setLoading(true);
       setError(null);
 
-      const apiBase = import.meta.env.VITE_API_BASE_URL || "http://localhost:3001";
       const res = await fetch(
-        `${apiBase}/api/distributor/iot/alerts?batchId=${encodeURIComponent(
+        `/api/distributor/iot/alerts?batchId=${encodeURIComponent(
           String(batchId)
         )}`
       );
@@ -117,9 +115,7 @@ export function DistributorIotAlerts({
       setError(null);
 
       const storageId = `DISTR-${Math.floor(Math.random() * 5) + 1}`;
-      const apiBase = import.meta.env.VITE_API_BASE_URL || "http://localhost:3001";
-
-      const res = await fetch(`${apiBase}/api/distributor/iot/simulate`, {
+      const res = await fetch(`/api/distributor/iot/simulate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -356,7 +352,7 @@ export function DistributorIotAlerts({
                               className="text-[11px] font-mono bg-slate-100 text-slate-700 cursor-help"
                               title={a.ipfsHash}
                             >
-                               {a.ipfsHash.slice(0, 8)}
+                              {a.ipfsHash.slice(0, 8)}
                             </Badge>
                           )}
                           {a.notifiedDistributor && (

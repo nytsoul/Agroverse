@@ -12,7 +12,6 @@ const languages = [
   { code: "en", name: "English" },
   { code: "ta", name: "தமிழ்" },
   { code: "hi", name: "हिन्दी" },
-  { code: "or", name: "ଓଡ଼ିଆ" },
 ];
 
 const LanguageSwitcher = () => {

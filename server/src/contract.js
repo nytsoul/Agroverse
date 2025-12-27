@@ -114,5 +114,37 @@ export const AGRI_TRUTH_CHAIN_ABI = [
       { name: "newBatchId", type: "uint256", indexed: true },
       { name: "quantity", type: "uint256", indexed: false }
     ], anonymous: false
+  },
+  {
+    type: "function", name: "farmerProfiles", stateMutability: "view", inputs: [{ name: "", type: "address" }],
+    outputs: [
+      { name: "name", type: "string" },
+      { name: "location", type: "string" },
+      { name: "isRegistered", type: "bool" }
+    ]
+  },
+  {
+    type: "function", name: "verifierProfiles", stateMutability: "view", inputs: [{ name: "", type: "address" }],
+    outputs: [
+      { name: "name", type: "string" },
+      { name: "location", type: "string" },
+      { name: "isRegistered", type: "bool" }
+    ]
+  },
+  {
+    type: "function", name: "distributorProfiles", stateMutability: "view", inputs: [{ name: "", type: "address" }],
+    outputs: [
+      { name: "name", type: "string" },
+      { name: "location", type: "string" },
+      { name: "isRegistered", type: "bool" }
+    ]
+  },
+  {
+    type: "function", name: "retailerProfiles", stateMutability: "view", inputs: [{ name: "", type: "address" }],
+    outputs: [
+      { name: "name", type: "string" },
+      { name: "location", type: "string" },
+      { name: "isRegistered", type: "bool" }
+    ]
   }
 ];

@@ -6,7 +6,8 @@
   :root {
     /* Background: Stone 50 */
     --background: 60 9% 98%;
-    --foreground: 215 19% 35%; /* Slate 600 for body text */
+    --foreground: 215 19% 35%;
+    /* Slate 600 for body text */
 
     --card: 0 0% 100%;
     --card-foreground: 215 19% 35%;
@@ -74,10 +75,17 @@
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased transition-colors duration-300;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-serif text-emerald-900;
   }
 }
@@ -86,6 +94,7 @@
 .font-sans {
   font-family: 'Inter', sans-serif;
 }
+
 .font-serif {
   font-family: 'Merriweather', serif;
 }

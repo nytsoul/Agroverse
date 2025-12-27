@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Leaf, 
-  Mail, 
-  Phone, 
+import {
+  Leaf,
+  Mail,
+  Phone,
   MapPin,
   Github,
   Twitter,
@@ -26,7 +26,7 @@ const Footer = () => {
                 <Leaf className="w-8 h-8 text-primary-foreground" />
               </div>
               <div>
-                <h3 className="font-bold text-2xl">FarmLedge</h3>
+                <h3 className="font-bold text-2xl">AgroVerse</h3>
                 <p className="text-base text-muted-foreground">{t('footer.platform')}</p>
               </div>
             </div>
@@ -47,7 +47,7 @@ const Footer = () => {
               <li><a href="/distributors" className="hover:text-foreground transition-colors font-medium">{t("nav.distributors")}</a></li>
               <li><a href="/retailers" className="hover:text-foreground transition-colors font-medium">{t("nav.retailers")}</a></li>
               <li><a href="/consumers" className="hover:text-foreground transition-colors font-medium">{t("nav.consumers")}</a></li>
-              
+
             </ul>
           </div>
 
@@ -100,7 +100,7 @@ const Footer = () => {
                       <div className="font-medium text-foreground text-base">Transparent pricing</div>
                       <p className="text-xs text-muted-foreground">See how prices are set and displayed at each stage.</p>
                       <div className="font-mono text-xs bg-muted rounded p-2">
-                       ₹ Farmer → ₹ Dist → ₹ Retail
+                        ₹ Farmer → ₹ Dist → ₹ Retail
                       </div>
                       <div className="text-xs text-muted-foreground">Helps consumers verify margins and farmer earnings.</div>
                     </div>
@@ -111,7 +111,7 @@ const Footer = () => {
                 <HoverCard>
                   <HoverCardTrigger asChild>
                     <a
-                      href="https://github.com/blackscythe123/FarmLedge#api-endpoints"
+                      href="https://github.com/blackscythe123/AgroVerse#api-endpoints"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-foreground transition-colors"
@@ -158,7 +158,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Mail className="w-4 h-4" />
-                <span>contact@FarmLedge.com</span>
+                <span>contact@AgroVerse.com</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Phone className="w-4 h-4" />
@@ -169,7 +169,7 @@ const Footer = () => {
                 <span>SSN College, Tamil Nadu, India</span>
               </div>
             </div>
-            
+
             <div className="flex gap-2 pt-2">
               <Button variant="ghost" size="icon" className="h-8 w-8">
                 <Twitter className="w-4 h-4" />
@@ -186,7 +186,7 @@ const Footer = () => {
                 aria-label="GitHub"
               >
                 <a
-                  href="https://github.com/blackscythe123/FarmLedge"
+                  href="https://github.com/blackscythe123/AgroVerse"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

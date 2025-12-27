@@ -11,7 +11,7 @@ from datetime import datetime, timedelta
 
 # Load Real Map
 script_dir = os.path.dirname(os.path.abspath(__file__))
-with open(os.path.join(script_dir, 'odisha_soil_district_map.json'), 'r') as f:
+with open(os.path.join(script_dir, 'tamilnadu_soil_district_map.json'), 'r') as f:
     soil_map = json.load(f)
 
 # Enhanced Crop Database with Real Market Data
@@ -57,7 +57,7 @@ def fetch_real_time_prices():
                 'format': 'json',
                 'limit': '50',
                 'filters[Commodity]': crop,
-                'filters[State]': 'Odisha',
+                'filters[State]': 'Tamil Nadu',
                 'sort[Arrival_Date]': 'desc'
             }
             
@@ -226,9 +226,9 @@ if __name__ == "__main__":
     print("=" * 70)
     
     # Save model
-    joblib.dump(model, os.path.join(script_dir, 'odisha_crop_price_predictor.joblib'))
+    joblib.dump(model, os.path.join(script_dir, 'tamilnadu_crop_price_predictor.joblib'))
     
-    print(f"\n✓ Model saved to 'odisha_crop_price_predictor.joblib'")
+    print(f"\n✓ Model saved to 'tamilnadu_crop_price_predictor.joblib'")
     print(f"✓ Ready for deployment!")
     print("=" * 70)
 

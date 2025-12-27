@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 
 const WeatherAlerts = () => {
   const { t } = useTranslation();
-  
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
       <Navigation />
@@ -48,7 +48,7 @@ const WeatherAlerts = () => {
               <div className="grid sm:grid-cols-2 gap-4 text-sm text-slate-600 max-w-4xl">
                 <div className="p-4 rounded-xl border border-blue-100 bg-white/80 shadow-sm">
                   <p className="text-xs uppercase tracking-wider text-blue-700 font-semibold mb-1">COVERAGE</p>
-                  <p className="font-semibold text-slate-900">Odisha-first rollout</p>
+                  <p className="font-semibold text-slate-900">Tamil Nadu-first rollout</p>
                   <p className="text-slate-600">Geofenced to avoid off-target forecasts.</p>
                 </div>
                 <div className="p-4 rounded-xl border border-emerald-100 bg-white/80 shadow-sm">
@@ -95,7 +95,7 @@ const WeatherAlerts = () => {
                   <Radio className="h-8 w-8 text-blue-600" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">Voice Calls</h3>
-                <p className="text-sm text-gray-600">Automated voice alerts in Hindi, English, Tamil, and Odia</p>
+                <p className="text-sm text-gray-600">Automated voice alerts in Hindi, English, and Tamil</p>
               </Card>
 
               <Card className="p-6 text-center hover:shadow-xl transition-shadow">

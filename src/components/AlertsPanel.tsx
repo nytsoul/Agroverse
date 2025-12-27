@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 
-const FALLBACK_COORDS = { lat: 20.2961, lon: 85.8245 }; // Bhubaneswar, Odisha
+const FALLBACK_COORDS = { lat: 13.0827, lon: 80.2707 }; // Chennai, Tamil Nadu
 
 const severityColor: Record<string, string> = {
   low: "bg-emerald-100 text-emerald-800",
@@ -39,7 +39,7 @@ function mapErrorMessage(msg?: string) {
     case "openweather_rate_limited":
       return "Weather service rate-limited. Please retry in a bit.";
     case "location_not_supported":
-      return "Only Odisha locations are supported right now.";
+      return "Only Tamil Nadu locations are supported right now.";
     case "invalid_coordinates":
       return "Could not read your location. Try again with permissions enabled.";
     default:
@@ -147,7 +147,7 @@ const AlertsPanel = () => {
             </div>
             <div>
               <p className="text-xs uppercase tracking-wider text-blue-700/70 font-semibold">Weather Guard</p>
-              <h2 className="text-xl font-bold text-slate-900">Live alerts tuned for Odisha</h2>
+              <h2 className="text-xl font-bold text-slate-900">Live alerts tuned for Tamil Nadu</h2>
               <p className="text-sm text-slate-500 flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-blue-600" />
                 {locationLabel}

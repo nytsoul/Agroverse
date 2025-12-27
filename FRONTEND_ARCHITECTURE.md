@@ -18,7 +18,7 @@ This document provides a comprehensive guide to the frontend structure, componen
 
 ### Global Navigation (`src/components/Navigation.tsx`)
 The application features a **fixed, responsive top navigation bar** that persists across all pages.
-- **Left**: "FarmLedge" Logo with a leaf icon.
+- **Left**: "AgroVerse" Logo with a leaf icon.
 - **Center (Desktop)**: Navigation links that dynamically appear based on the user's role.
 - **Right**:
   - **Language Switcher**: A dropdown to toggle between languages.

@@ -1,7 +1,7 @@
-# FarmLedge AI Coding Agent Instructions
+# AgroVerse AI Coding Agent Instructions
 
 ## Project Overview
-**FarmLedge** is a transparent agricultural supply chain platform that registers produce batches on-chain (Arbitrum Sepolia) with INR-denominated pricing, uses Stripe for off-chain payments, and employs verifier relayers to transfer ownership upon verified payment.
+**AgroVerse** is a transparent agricultural supply chain platform that registers produce batches on-chain (Arbitrum Sepolia) with INR-denominated pricing, uses Stripe for off-chain payments, and employs verifier relayers to transfer ownership upon verified payment.
 
 ## Architecture Overview
 

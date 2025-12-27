@@ -18,7 +18,8 @@ import {
   CheckCircle2,
   CreditCard,
   Mail,
-  Lightbulb
+  Lightbulb,
+  Users
 } from "lucide-react";
 
 export default function Login() {
@@ -80,14 +81,18 @@ export default function Login() {
       : role === "distributor" ? "/distributors"
         : role === "retailer" ? "/retailers"
           : role === "verifier" ? "/verifiers"
-            : "/consumers";
+            : role === "csc" ? "/csc-dashboard"
+              : role === "gov" ? "/gov-dashboard"
+                : "/consumers";
 
     const addresses: Record<string, string> = {
       farmer: '0x1111111111111111111111111111111111111111',
       distributor: '0x2222222222222222222222222222222222222222',
       retailer: '0x3333333333333333333333333333333333333333',
       consumer: '0x4444444444444444444444444444444444444444',
-      verifier: '0x9999999999999999999999999999999999999999'
+      verifier: '0x9999999999999999999999999999999999999999',
+      csc: '0x5555555555555555555555555555555555555555',
+      gov: '0x6666666666666666666666666666666666666666'
     };
 
     login({ role, email: role === "farmer" ? aadhaar : email, address: addresses[role] });
@@ -124,6 +129,18 @@ export default function Login() {
       title: "Verifiers",
       description: "Verify and validate product authenticity",
       color: "indigo"
+    },
+    csc: {
+      icon: Users,
+      title: "Cooperative (CSC)",
+      description: "Monitor farmer adoption and transaction analytics",
+      color: "blue"
+    },
+    gov: {
+      icon: ShieldCheck,
+      title: "Government / Admin",
+      description: "Oversee national traceability and policy impact",
+      color: "slate"
     }
   };
 
@@ -142,10 +159,10 @@ export default function Login() {
             {t("login.hero.badge")}
           </div>
 
-          {/* Welcome to Farmledge Title */}
+          {/* Welcome to AgroVerse Title */}
           <div className="mb-4">
             <h1 className="text-5xl sm:text-6xl font-bold text-slate-900 mb-2">
-              {t("login.hero.welcome")} <span className="text-emerald-600">Farmledge</span>
+              {t("login.hero.welcome")} <span className="text-emerald-600">AgroVerse</span>
             </h1>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto">
               {t("login.hero.tagline")}
@@ -177,8 +194,8 @@ export default function Login() {
                       resetForm();
                     }}
                     className={`w-full text-left p-5 rounded-xl border-2 transition-all duration-200 ${isActive
-                        ? 'bg-slate-900 border-slate-900 text-white shadow-lg'
-                        : 'bg-white border-slate-200 text-slate-900 hover:border-slate-300 hover:shadow-md'
+                      ? 'bg-slate-900 border-slate-900 text-white shadow-lg'
+                      : 'bg-white border-slate-200 text-slate-900 hover:border-slate-300 hover:shadow-md'
                       }`}
                   >
                     <div className="flex items-center justify-between">

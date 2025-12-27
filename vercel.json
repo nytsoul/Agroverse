@@ -1,8 +1,20 @@
 {
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "https://farmledge-crop-prediction.onrender.com/api/$1" },
-    { "source": "/predict", "destination": "https://farmledge-crop-prediction-python.onrender.com/predict" },
-    { "source": "/create-checkout-session", "destination": "https://farmledge-crop-prediction.onrender.com/create-checkout-session" },
-    { "source": "/((?!api|create-checkout-session|.*\\..*).*)", "destination": "/" }
+    {
+      "source": "/api/(.*)",
+      "destination": "https://AgroVerse-crop-prediction.onrender.com/api/$1"
+    },
+    {
+      "source": "/predict",
+      "destination": "https://AgroVerse-crop-prediction-python.onrender.com/predict"
+    },
+    {
+      "source": "/create-checkout-session",
+      "destination": "https://AgroVerse-crop-prediction.onrender.com/create-checkout-session"
+    },
+    {
+      "source": "/((?!api|create-checkout-session|.*\\..*).*)",
+      "destination": "/"
+    }
   ]
 }

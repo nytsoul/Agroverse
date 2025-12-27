@@ -22,12 +22,12 @@ const Join = () => {
       role === "farmer"
         ? "/farmers"
         : role === "distributor"
-        ? "/distributors"
-        : role === "retailer"
-        ? "/retailers"
-        : role === "consumer"
-        ? "/consumers"
-        : "/admin";
+          ? "/distributors"
+          : role === "retailer"
+            ? "/retailers"
+            : role === "consumer"
+              ? "/consumers"
+              : "/admin";
     login({ role: role as any, email: email || undefined });
     navigate(route);
   };
@@ -36,7 +36,7 @@ const Join = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       <main className="container mx-auto px-4 py-28">
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">Join FarmLedge</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-6">Join AgroVerse</h1>
         <p className="text-muted-foreground mb-8 max-w-2xl">
           Pick your role and continue. You’ll be asked to login on the next step.
         </p>

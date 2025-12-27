@@ -25,307 +25,307 @@ type StorageFacility = {
   distance?: number; // Optional distance in km
 };
 
-// Dummy storage facility data with coordinates (20 facilities across Odisha)
+// Dummy storage facility data with coordinates (20 facilities across Tamil Nadu)
 const STORAGE_FACILITIES: StorageFacility[] = [
   {
     id: 1,
-    name: "Odisha State Warehousing Corporation - Cuttack",
+    name: "Tamil Nadu State Warehousing Corporation - Chennai",
     type: "Warehouse",
-    district: "Cuttack",
-    address: "Badambadi, Cuttack, Odisha 753012",
+    district: "Chennai",
+    address: "Anna Salai, Chennai, Tamil Nadu 600002",
     capacity: "5000 MT",
     available: "2000 MT",
     rate: "₹150/quintal/month",
-    contact: "+91-671-2301234",
-    email: "oswc.cuttack@gmail.com",
-    lat: 20.4625,
-    lon: 85.8830,
+    contact: "+91-44-2301234",
+    email: "tnswc.chennai@gmail.com",
+    lat: 13.0827,
+    lon: 80.2707,
     features: ["Temperature controlled", "Pest management", "24/7 security", "Insurance available"]
   },
   {
     id: 2,
-    name: "Central Warehousing Corporation - Bhubaneswar",
+    name: "Central Warehousing Corporation - Coimbatore",
     type: "Warehouse",
-    district: "Khordha",
-    address: "Rasulgarh Industrial Estate, Bhubaneswar 751010",
+    district: "Coimbatore",
+    address: "Peelamedu, Coimbatore 641004",
     capacity: "8000 MT",
     available: "3500 MT",
     rate: "₹180/quintal/month",
-    contact: "+91-674-2580123",
-    email: "cwc.bbsr@nic.in",
-    lat: 20.2961,
-    lon: 85.8245,
+    contact: "+91-422-2580123",
+    email: "cwc.cbe@nic.in",
+    lat: 11.0168,
+    lon: 76.9558,
     features: ["Scientific storage", "Quality testing", "Fumigation services", "Rail connectivity"]
   },
   {
     id: 3,
-    name: "Krishna Cold Storage - Balasore",
+    name: "Madurai Cold Storage",
     type: "Cold Storage",
-    district: "Balasore",
-    address: "Industrial Area, Balasore 756001",
+    district: "Madurai",
+    address: "Industrial Estate, Madurai 625007",
     capacity: "3000 MT",
     available: "800 MT",
     rate: "₹400/quintal/month",
-    contact: "+91-6782-262345",
-    email: "krishnacold@yahoo.com",
-    lat: 21.4934,
-    lon: 86.9339,
+    contact: "+91-452-2623456",
+    email: "madurai.cold@yahoo.com",
+    lat: 9.9252,
+    lon: 78.1198,
     features: ["Temperature: -5°C to 15°C", "Humidity control", "Separate chambers", "Quality monitoring"]
   },
   {
     id: 4,
-    name: "Sambalpur Agro Cold Chain",
+    name: "Salem Agro Cold Chain",
     type: "Cold Storage",
-    district: "Sambalpur",
-    address: "Ainthapali, Sambalpur 768004",
+    district: "Salem",
+    address: "Suramangalam, Salem 636005",
     capacity: "2500 MT",
     available: "1200 MT",
     rate: "₹450/quintal/month",
-    contact: "+91-663-2402567",
-    email: "sambalpurcoldchain@gmail.com",
-    lat: 21.4669,
-    lon: 83.9812,
-    features: ["Multi-commodity storage", "Pre-cooling facility", "Grading & sorting", "Transport facility"]
+    contact: "+91-427-2402567",
+    email: "salem.coldchain@gmail.com",
+    lat: 11.6643,
+    lon: 78.1460,
+    features: ["Multi-commodity storage", "Pre-cooling, Grading & sorting", "Transport facility"]
   },
   {
     id: 5,
-    name: "Farmers Godown Cooperative - Puri",
+    name: "Farmers Godown Cooperative - Trichy",
     type: "Godown",
-    district: "Puri",
-    address: "Near Mandi, Puri 752001",
+    district: "Tiruchirappalli",
+    address: "Gandhi Market, Trichy 620008",
     capacity: "500 MT",
     available: "200 MT",
     rate: "₹80/quintal/month",
-    contact: "+91-6752-223456",
-    email: "purigodown@coop.org",
-    lat: 19.8135,
-    lon: 85.8312,
+    contact: "+91-431-2234567",
+    email: "trichy.godown@coop.org",
+    lat: 10.7905,
+    lon: 78.7047,
     features: ["Affordable rates", "Flexible terms", "Easy access", "Community managed"]
   },
   {
     id: 6,
-    name: "Rourkela Storage Hub",
+    name: "Tirunelveli Storage Hub",
     type: "Warehouse",
-    district: "Sundargarh",
-    address: "Industrial Area, Rourkela 769042",
+    district: "Tirunelveli",
+    address: "SIPCOT, Tirunelveli 627002",
     capacity: "4000 MT",
     available: "1500 MT",
     rate: "₹160/quintal/month",
-    contact: "+91-661-2401890",
-    email: "rkl.storage@outlook.com",
-    lat: 22.2604,
-    lon: 84.8536,
+    contact: "+91-462-2401890",
+    email: "tvl.storage@outlook.com",
+    lat: 8.7139,
+    lon: 77.7567,
     features: ["Modern infrastructure", "Digital monitoring", "Loan facility", "Direct market access"]
   },
   {
     id: 7,
-    name: "Berhampur Agricultural Warehouse",
+    name: "Erode Agricultural Warehouse",
     type: "Warehouse",
-    district: "Ganjam",
-    address: "Gopalpur Road, Berhampur 760002",
+    district: "Erode",
+    address: "Perundurai Road, Erode 638011",
     capacity: "3500 MT",
     available: "900 MT",
     rate: "₹140/quintal/month",
-    contact: "+91-680-2221234",
-    email: "berhampur.warehouse@rediffmail.com",
-    lat: 19.3150,
-    lon: 84.7941,
+    contact: "+91-424-2221234",
+    email: "erode.warehouse@rediffmail.com",
+    lat: 11.3410,
+    lon: 77.7172,
     features: ["Ventilation system", "Fire safety", "Weighing facility", "Loading dock"]
   },
   {
     id: 8,
-    name: "Mayurbhanj Tribal Godown",
+    name: "Vellore Farmers Godown",
     type: "Godown",
-    district: "Mayurbhanj",
-    address: "Baripada Town, Mayurbhanj 757001",
+    district: "Vellore",
+    address: "Katpadi, Vellore 632006",
     capacity: "300 MT",
     available: "150 MT",
     rate: "₹60/quintal/month",
-    contact: "+91-6792-252345",
-    email: "mayurbhanj.tribal@gmail.com",
-    lat: 21.9347,
-    lon: 86.7336,
+    contact: "+91-416-2523456",
+    email: "vellore.farmers@gmail.com",
+    lat: 12.9165,
+    lon: 79.1325,
     features: ["Subsidized rates", "Quick rental", "Local access", "Small farmer friendly"]
   },
   {
     id: 9,
-    name: "Angul District Warehouse",
+    name: "Thanjavur District Warehouse",
     type: "Warehouse",
-    district: "Angul",
-    address: "Nalco Area, Angul 759122",
+    district: "Thanjavur",
+    address: "Medical College Road, Thanjavur 613004",
     capacity: "3200 MT",
     available: "1100 MT",
     rate: "₹145/quintal/month",
-    contact: "+91-6764-230890",
-    email: "angul.warehouse@gmail.com",
-    lat: 20.8400,
-    lon: 85.1025,
+    contact: "+91-4362-230890",
+    email: "thanjavur.warehouse@gmail.com",
+    lat: 10.7870,
+    lon: 79.1378,
     features: ["Industrial zone", "Good connectivity", "Backup power", "Round the clock access"]
   },
   {
     id: 10,
-    name: "Jajpur Cold Storage Facility",
+    name: "Thoothukudi Cold Storage Facility",
     type: "Cold Storage",
-    district: "Jajpur",
-    address: "Vyasanagar, Jajpur 755019",
+    district: "Thoothukudi",
+    address: "Harbour Estate, Thoothukudi 628004",
     capacity: "2800 MT",
     available: "950 MT",
     rate: "₹420/quintal/month",
-    contact: "+91-6726-220456",
-    email: "jajpur.coldstorage@yahoo.in",
-    lat: 20.8507,
-    lon: 86.3290,
+    contact: "+91-461-2204567",
+    email: "tuticorin.coldstorage@yahoo.in",
+    lat: 8.7642,
+    lon: 78.1348,
     features: ["Multi-temperature zones", "Quick freezing", "Quality certification", "Transport support"]
   },
   {
     id: 11,
-    name: "Kendrapara Farmers Godown",
+    name: "Dindigul Farmers Godown",
     type: "Godown",
-    district: "Kendrapara",
-    address: "Market Complex, Kendrapara 754211",
+    district: "Dindigul",
+    address: "Palani Road, Dindigul 624001",
     capacity: "450 MT",
     available: "180 MT",
     rate: "₹75/quintal/month",
-    contact: "+91-6727-232567",
-    email: "kendrapara.godown@coop.org",
-    lat: 20.5023,
-    lon: 86.4245,
-    features: ["Coastal access", "Fish storage", "Low rates", "Community owned"]
+    contact: "+91-451-2325678",
+    email: "dindigul.godown@coop.org",
+    lat: 10.3673,
+    lon: 77.9803,
+    features: ["Market access", "Vegetable storage", "Low rates", "Community owned"]
   },
   {
     id: 12,
-    name: "Jharsuguda Industrial Warehouse",
+    name: "Tiruppur Industrial Warehouse",
     type: "Warehouse",
-    district: "Jharsuguda",
-    address: "Belpahar, Jharsuguda 768217",
+    district: "Tiruppur",
+    address: "Avinashi Road, Tiruppur 641602",
     capacity: "4500 MT",
     available: "1800 MT",
     rate: "₹165/quintal/month",
-    contact: "+91-6645-270123",
-    email: "jharsuguda.warehouse@outlook.com",
-    lat: 21.8531,
-    lon: 84.0363,
-    features: ["Near railway", "Loading bay", "Security system", "Proper ventilation"]
+    contact: "+91-421-2701234",
+    email: "tiruppur.warehouse@outlook.com",
+    lat: 11.1085,
+    lon: 77.3411,
+    features: ["Near textile hub", "Loading bay", "Security system", "Proper ventilation"]
   },
   {
     id: 13,
-    name: "Koraput Tribal Storage Center",
+    name: "Kanyakumari Storage Center",
     type: "Godown",
-    district: "Koraput",
-    address: "Jeypore Road, Koraput 764020",
+    district: "Kanyakumari",
+    address: "Nagercoil, Kanyakumari 629001",
     capacity: "350 MT",
     available: "140 MT",
     rate: "₹55/quintal/month",
-    contact: "+91-6852-250234",
-    email: "koraput.tribal@gmail.com",
-    lat: 18.8137,
-    lon: 82.7111,
-    features: ["Tribal welfare", "Low cost", "Organic certified", "Traditional methods"]
+    contact: "+91-4652-250234",
+    email: "kanyakumari.storage@gmail.com",
+    lat: 8.0883,
+    lon: 77.5385,
+    features: ["Spice storage", "Low cost", "Organic certified", "Traditional methods"]
   },
   {
     id: 14,
-    name: "Bargarh Agro Warehouse",
+    name: "Cuddalore Agro Warehouse",
     type: "Warehouse",
-    district: "Bargarh",
-    address: "Ambabhona, Bargarh 768028",
+    district: "Cuddalore",
+    address: "Semmandalam, Cuddalore 607001",
     capacity: "3800 MT",
     available: "1400 MT",
     rate: "₹155/quintal/month",
-    contact: "+91-6646-230678",
-    email: "bargarh.agro@rediffmail.com",
-    lat: 21.3333,
-    lon: 83.6189,
-    features: ["Rice hub", "Modern facility", "Weighbridge", "Quality check"]
+    contact: "+91-4142-230678",
+    email: "cuddalore.agro@rediffmail.com",
+    lat: 11.7480,
+    lon: 79.7714,
+    features: ["Coastal proximity", "Modern facility", "Weighbridge", "Quality check"]
   },
   {
     id: 15,
-    name: "Bhadrak Cold Chain Hub",
+    name: "Kancheepuram Cold Chain Hub",
     type: "Cold Storage",
-    district: "Bhadrak",
-    address: "Charampa, Bhadrak 756100",
+    district: "Kancheepuram",
+    address: "Orikkai, Kancheepuram 631502",
     capacity: "2200 MT",
     available: "700 MT",
     rate: "₹380/quintal/month",
-    contact: "+91-6784-251234",
-    email: "bhadrak.coldchain@gmail.com",
-    lat: 21.0542,
-    lon: 86.4956,
+    contact: "+91-44-27221234",
+    email: "kanchi.coldchain@gmail.com",
+    lat: 12.8342,
+    lon: 79.7036,
     features: ["Vegetable storage", "Pre-cooling", "Sorting facility", "Direct market link"]
   },
   {
     id: 16,
-    name: "Dhenkanal Storage Complex",
+    name: "Villupuram Storage Complex",
     type: "Warehouse",
-    district: "Dhenkanal",
-    address: "Kamakhyanagar, Dhenkanal 759018",
+    district: "Villupuram",
+    address: "Trichy Trunk Road, Villupuram 605602",
     capacity: "2900 MT",
     available: "1000 MT",
     rate: "₹135/quintal/month",
-    contact: "+91-6762-270345",
-    email: "dhenkanal.storage@nic.in",
-    lat: 20.9507,
-    lon: 85.5966,
+    contact: "+91-4146-220345",
+    email: "villupuram.storage@nic.in",
+    lat: 11.9401,
+    lon: 79.4861,
     features: ["Central location", "Good roads", "Power backup", "Fire safety"]
   },
   {
     id: 17,
-    name: "Kalahandi Farmers Cooperative",
+    name: "Karur Farmers Cooperative",
     type: "Godown",
-    district: "Kalahandi",
-    address: "Bhawanipatna, Kalahandi 766001",
+    district: "Karur",
+    address: "Thanthonimalai, Karur 639005",
     capacity: "400 MT",
     available: "160 MT",
     rate: "₹70/quintal/month",
-    contact: "+91-6670-230456",
-    email: "kalahandi.coop@yahoo.com",
-    lat: 19.9068,
-    lon: 83.1689,
+    contact: "+91-4324-230456",
+    email: "karur.coop@yahoo.com",
+    lat: 10.9601,
+    lon: 78.0766,
     features: ["Farmer friendly", "Flexible terms", "Easy access", "Local management"]
   },
   {
     id: 18,
-    name: "Nayagarh District Warehouse",
+    name: "Nagapattinam District Warehouse",
     type: "Warehouse",
-    district: "Nayagarh",
-    address: "Odagaon, Nayagarh 752081",
+    district: "Nagapattinam",
+    address: "Velipalayam, Nagapattinam 611001",
     capacity: "2600 MT",
     available: "850 MT",
     rate: "₹130/quintal/month",
-    contact: "+91-6753-262789",
-    email: "nayagarh.warehouse@gmail.com",
-    lat: 20.1283,
-    lon: 85.0963,
+    contact: "+91-4365-222789",
+    email: "nagai.warehouse@gmail.com",
+    lat: 10.7656,
+    lon: 79.8424,
     features: ["Grain storage", "Pest control", "Insurance facility", "Good connectivity"]
   },
   {
     id: 19,
-    name: "Rayagada Cold Storage",
+    name: "Krishnagiri Cold Storage",
     type: "Cold Storage",
-    district: "Rayagada",
-    address: "Gunupur Road, Rayagada 765001",
+    district: "Krishnagiri",
+    address: "Bangalore Road, Krishnagiri 635001",
     capacity: "1800 MT",
     available: "600 MT",
     rate: "₹410/quintal/month",
-    contact: "+91-6856-222345",
-    email: "rayagada.cold@outlook.com",
-    lat: 19.1664,
-    lon: 83.4159,
-    features: ["Fruit storage", "Temperature control", "Quick processing", "Transport available"]
+    contact: "+91-4343-252345",
+    email: "krishnagiri.cold@outlook.com",
+    lat: 12.5186,
+    lon: 78.2137,
+    features: ["Fruit storage (Mango)", "Temperature control", "Quick processing", "Transport available"]
   },
   {
     id: 20,
-    name: "Jagatsinghpur Coastal Storage",
+    name: "Ramanathapuram Storage",
     type: "Warehouse",
-    district: "Jagatsinghpur",
-    address: "Paradip Port Area, Jagatsinghpur 754142",
+    district: "Ramanathapuram",
+    address: "Madurai Road, Ramanathapuram 623501",
     capacity: "5500 MT",
     available: "2200 MT",
     rate: "₹170/quintal/month",
-    contact: "+91-6722-220890",
-    email: "jagatsinghpur.storage@nic.in",
-    lat: 20.3156,
-    lon: 86.6890,
-    features: ["Port connectivity", "Export facility", "Large capacity", "Modern infrastructure"]
+    contact: "+91-4567-220890",
+    email: "ramnad.storage@nic.in",
+    lat: 9.3639,
+    lon: 78.8395,
+    features: ["Dry land crops", "Export facility", "Large capacity", "Modern infrastructure"]
   }
 ];
 
@@ -334,7 +334,7 @@ const calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: numbe
   const R = 6371; // Earth's radius in km
   const dLat = (lat2 - lat1) * Math.PI / 180;
   const dLon = (lon2 - lon1) * Math.PI / 180;
-  const a = 
+  const a =
     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
     Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
     Math.sin(dLon / 2) * Math.sin(dLon / 2);
@@ -342,24 +342,24 @@ const calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: numbe
   return R * c;
 };
 
-const ODISHA_DISTRICTS = [
-  "All Districts", "Angul", "Balangir", "Balasore", "Bargarh", "Bhadrak", "Boudh", "Cuttack",
-  "Deogarh", "Dhenkanal", "Gajapati", "Ganjam", "Jagatsinghpur", "Jajpur", "Jharsuguda",
-  "Kalahandi", "Kandhamal", "Kendrapara", "Kendujhar", "Khordha", "Koraput", "Malkangiri",
-  "Mayurbhanj", "Nabarangpur", "Nayagarh", "Nuapada", "Puri", "Rayagada", "Sambalpur",
-  "Subarnapur", "Sundargarh"
+const TAMIL_NADU_DISTRICTS = [
+  "All Districts", "Ariyalur", "Chengalpattu", "Chennai", "Coimbatore", "Cuddalore", "Dharmapuri", "Dindigul",
+  "Erode", "Kallakurichi", "Kancheepuram", "Kanyakumari", "Karur", "Krishnagiri", "Madurai", "Mayiladuthurai",
+  "Nagapattinam", "Namakkal", "Nilgiris", "Perambalur", "Pudukkottai", "Ramanathapuram", "Ranipet", "Salem",
+  "Sivaganga", "Tenkasi", "Thanjavur", "Theni", "Thoothukudi", "Tiruchirappalli", "Tirunelveli", "Tirupathur",
+  "Tiruppur", "Tiruvallur", "Tiruvannamalai", "Tiruvarur", "Vellore", "Viluppuram", "Virudhunagar"
 ];
 
 const StorageServices = () => {
   const { t } = useTranslation();
   const [selectedDistrict, setSelectedDistrict] = useState("All Districts");
   const [selectedType, setSelectedType] = useState("All Types");
-  const [showResults, setShowResults] = useState(false);
+  const [showResults, setShowResults] = useState(true); // Changed to true to show results by default
   const [userLocation, setUserLocation] = useState<{ lat: number; lon: number } | null>(null);
   const [loadingLocation, setLoadingLocation] = useState(false);
   const [viewMode, setViewMode] = useState<'list' | 'map'>('list');
   const [selectedFacility, setSelectedFacility] = useState<number | null>(null);
-  const [searchRadius, setSearchRadius] = useState(20); // km - default 20km radius
+  const [searchRadius, setSearchRadius] = useState(50); // Increased to 50km for better coverage
 
   // Get user's current location
   useEffect(() => {
@@ -376,13 +376,13 @@ const StorageServices = () => {
         (error) => {
           console.error("Error getting location:", error);
           setLoadingLocation(false);
-          // Fallback to Bhubaneswar coordinates
-          setUserLocation({ lat: 20.2961, lon: 85.8245 });
+          // Fallback to Chennai coordinates
+          setUserLocation({ lat: 13.0827, lon: 80.2707 });
         }
       );
     } else {
-      // Fallback to Bhubaneswar coordinates
-      setUserLocation({ lat: 20.2961, lon: 85.8245 });
+      // Fallback to Chennai coordinates
+      setUserLocation({ lat: 13.0827, lon: 80.2707 });
     }
   }, []);
 
@@ -390,13 +390,9 @@ const StorageServices = () => {
   const filteredFacilities = STORAGE_FACILITIES.filter(facility => {
     const districtMatch = selectedDistrict === "All Districts" || facility.district === selectedDistrict;
     const typeMatch = selectedType === "All Types" || facility.type === selectedType;
-    
-    // Filter by distance if user location is available
-    if (userLocation) {
-      const distance = calculateDistance(userLocation.lat, userLocation.lon, facility.lat, facility.lon);
-      return districtMatch && typeMatch && distance <= searchRadius;
-    }
-    
+
+    // Only filter by district and type, NOT by distance
+    // This ensures all facilities are shown
     return districtMatch && typeMatch;
   }).map(facility => {
     if (userLocation) {
@@ -405,6 +401,7 @@ const StorageServices = () => {
     }
     return facility;
   }).sort((a, b) => {
+    // Sort by distance if available (closest first)
     if (a.distance && b.distance) {
       return a.distance - b.distance;
     }
@@ -413,41 +410,45 @@ const StorageServices = () => {
 
   const handleFindStorage = () => {
     setShowResults(true);
+    // Scroll to results
+    setTimeout(() => {
+      document.getElementById('storage-results')?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-amber-50">
       <Navigation />
-      
+
       {/* Hero Section with Images */}
-      <section className="pt-32 pb-20 bg-gradient-to-r from-emerald-600 via-green-700 to-teal-600 relative overflow-hidden">
+      <section className="pt-24 pb-12 bg-gradient-to-r from-emerald-600 via-green-700 to-teal-600 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}></div>
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* Left Content */}
             <div>
-              <Badge className="mb-4 bg-white/20 text-white border-white/30 text-sm px-4 py-1">
+              <Badge className="mb-3 bg-white/20 text-white border-white/30 text-xs px-3 py-1">
                 📦 {t('storage.badge')}
               </Badge>
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                Find Storage <br/>
+              <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                Find Storage <br />
                 <span className="text-yellow-300">Near You</span>
               </h1>
-              <p className="text-green-50 text-xl mb-8 leading-relaxed">
+              <p className="text-green-50 text-base mb-6 leading-relaxed">
                 Locate nearby warehouses, cold storage, and godowns with real-time availability and competitive rates
               </p>
-              
+
               {/* Location Status */}
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
                 {loadingLocation ? (
                   <>
-                    <Loader2 className="h-5 w-5 text-yellow-300 animate-spin" />
+                    <Loader2 className="h-4 w-4 text-yellow-300 animate-spin" />
                     <span className="text-white">Detecting your location...</span>
                   </>
                 ) : userLocation ? (
@@ -467,37 +468,37 @@ const StorageServices = () => {
             </div>
 
             {/* Right Side - Image Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 transform hover:scale-105 transition-transform">
-                  <div className="bg-yellow-400 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                    <Package className="h-8 w-8 text-green-700" />
+            <div className="grid grid-cols-2 gap-3">
+              <div className="space-y-3">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 transform hover:scale-105 transition-transform">
+                  <div className="bg-yellow-400 rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                    <Package className="h-6 w-6 text-green-700" />
                   </div>
-                  <h3 className="text-white font-bold text-xl mb-2">Warehouses</h3>
-                  <p className="text-green-100 text-sm">Modern storage facilities</p>
+                  <h3 className="text-white font-bold text-base mb-1">Warehouses</h3>
+                  <p className="text-green-100 text-xs">Modern storage facilities</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 transform hover:scale-105 transition-transform">
-                  <div className="bg-blue-400 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                    <Clock className="h-8 w-8 text-white" />
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 transform hover:scale-105 transition-transform">
+                  <div className="bg-blue-400 rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                    <Clock className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-white font-bold text-xl mb-2">24/7 Access</h3>
-                  <p className="text-green-100 text-sm">Round the clock availability</p>
+                  <h3 className="text-white font-bold text-base mb-1">24/7 Access</h3>
+                  <p className="text-green-100 text-xs">Round the clock availability</p>
                 </div>
               </div>
-              <div className="space-y-4 pt-8">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 transform hover:scale-105 transition-transform">
-                  <div className="bg-cyan-400 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                    <MapPin className="h-8 w-8 text-blue-700" />
+              <div className="space-y-3 pt-6">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 transform hover:scale-105 transition-transform">
+                  <div className="bg-cyan-400 rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                    <MapPin className="h-6 w-6 text-blue-700" />
                   </div>
-                  <h3 className="text-white font-bold text-xl mb-2">Nearby</h3>
-                  <p className="text-green-100 text-sm">Find closest facilities</p>
+                  <h3 className="text-white font-bold text-base mb-1">Nearby</h3>
+                  <p className="text-green-100 text-xs">Find closest facilities</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 transform hover:scale-105 transition-transform">
-                  <div className="bg-pink-400 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                    <IndianRupee className="h-8 w-8 text-white" />
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 transform hover:scale-105 transition-transform">
+                  <div className="bg-pink-400 rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                    <IndianRupee className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-white font-bold text-xl mb-2">Affordable</h3>
-                  <p className="text-green-100 text-sm">Best rates guaranteed</p>
+                  <h3 className="text-white font-bold text-base mb-1">Affordable</h3>
+                  <p className="text-green-100 text-xs">Best rates guaranteed</p>
                 </div>
               </div>
             </div>
@@ -517,19 +518,19 @@ const StorageServices = () => {
             <div className="grid md:grid-cols-4 gap-6 mb-6">
               <div>
                 <label className="block text-base font-semibold text-gray-700 mb-3">Select District</label>
-                <select 
+                <select
                   className="w-full px-5 py-3 border-2 border-amber-300 rounded-lg focus:ring-2 focus:ring-amber-500 text-base bg-white/80"
                   value={selectedDistrict}
                   onChange={(e) => setSelectedDistrict(e.target.value)}
                 >
-                  {ODISHA_DISTRICTS.map(district => (
+                  {TAMIL_NADU_DISTRICTS.map(district => (
                     <option key={district} value={district}>{district}</option>
                   ))}
                 </select>
               </div>
               <div>
                 <label className="block text-base font-semibold text-gray-700 mb-3">Storage Type</label>
-                <select 
+                <select
                   className="w-full px-5 py-3 border-2 border-amber-300 rounded-lg focus:ring-2 focus:ring-amber-500 text-base bg-white/80"
                   value={selectedType}
                   onChange={(e) => setSelectedType(e.target.value)}
@@ -542,7 +543,7 @@ const StorageServices = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Search Radius (km)</label>
-                <select 
+                <select
                   className="w-full px-5 py-3 border-2 border-amber-300 rounded-lg focus:ring-2 focus:ring-amber-500 text-base bg-white/80"
                   value={searchRadius}
                   onChange={(e) => setSearchRadius(Number(e.target.value))}
@@ -565,7 +566,7 @@ const StorageServices = () => {
 
           {/* Storage Results */}
           {showResults && (
-            <>
+            <div id="storage-results">
               {/* View Toggle & Results Count */}
               <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center gap-2">
@@ -613,7 +614,7 @@ const StorageServices = () => {
                           `,
                           backgroundSize: '40px 40px'
                         }}></div>
-                        
+
                         {/* Map Legend */}
                         <div className="absolute top-4 right-4 bg-white rounded-lg shadow-xl p-4 z-30 border-2 border-gray-300">
                           <h4 className="text-sm font-bold text-gray-800 mb-3 border-b pb-2">Legend</h4>
@@ -649,24 +650,23 @@ const StorageServices = () => {
                         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                           <div className="text-center opacity-30">
                             <Map className="h-24 w-24 text-gray-400 mx-auto mb-3" />
-                            <p className="text-gray-500 font-bold text-xl">Odisha State</p>
+                            <p className="text-gray-500 font-bold text-xl">Tamil Nadu State</p>
                             <p className="text-sm text-gray-400 mt-1">Storage Facilities Distribution Map</p>
                           </div>
                         </div>
-                        
+
                         {/* Facility Markers */}
                         {filteredFacilities.map((facility, index) => {
-                          // Calculate position based on actual lat/lon relative to Odisha bounds
-                          // Odisha bounds: lat 17.78°N - 22.57°N, lon 81.37°E - 87.53°E
-                          const latPercent = ((facility.lat - 17.78) / (22.57 - 17.78)) * 100;
-                          const lonPercent = ((facility.lon - 81.37) / (87.53 - 81.37)) * 100;
-                          
+                          // Calculate position based on actual lat/lon relative to Tamil Nadu bounds
+                          // Tamil Nadu bounds (approx): lat 8.08°N - 13.5°N, lon 76.2°E - 80.3°E
+                          const latPercent = ((facility.lat - 8.08) / (13.5 - 8.08)) * 100;
+                          const lonPercent = ((facility.lon - 76.2) / (80.3 - 76.2)) * 100;
+
                           return (
                             <div
                               key={facility.id}
-                              className={`absolute cursor-pointer transform hover:scale-150 transition-all duration-200 ${
-                                selectedFacility === facility.id ? 'z-20' : 'z-10'
-                              }`}
+                              className={`absolute cursor-pointer transform hover:scale-150 transition-all duration-200 ${selectedFacility === facility.id ? 'z-20' : 'z-10'
+                                }`}
                               style={{
                                 left: `${Math.max(5, Math.min(90, lonPercent))}%`,
                                 top: `${Math.max(5, Math.min(90, 100 - latPercent))}%`,
@@ -674,21 +674,19 @@ const StorageServices = () => {
                               onClick={() => setSelectedFacility(facility.id)}
                               title={`${facility.name} - ${facility.distance ? facility.distance.toFixed(1) + ' km' : ''}`}
                             >
-                              <div className={`relative ${
-                                selectedFacility === facility.id 
-                                  ? 'animate-bounce' 
-                                  : ''
-                              }`}>
-                                <MapPin 
-                                  className={`h-12 w-12 drop-shadow-2xl filter ${
-                                    selectedFacility === facility.id 
-                                      ? 'text-red-600 fill-red-500' 
-                                      : facility.type === 'Cold Storage'
+                              <div className={`relative ${selectedFacility === facility.id
+                                ? 'animate-bounce'
+                                : ''
+                                }`}>
+                                <MapPin
+                                  className={`h-12 w-12 drop-shadow-2xl filter ${selectedFacility === facility.id
+                                    ? 'text-red-600 fill-red-500'
+                                    : facility.type === 'Cold Storage'
                                       ? 'text-blue-600 fill-blue-400'
                                       : facility.type === 'Warehouse'
-                                      ? 'text-green-600 fill-green-400'
-                                      : 'text-orange-600 fill-orange-400'
-                                  }`}
+                                        ? 'text-green-600 fill-green-400'
+                                        : 'text-orange-600 fill-orange-400'
+                                    }`}
                                   style={{
                                     filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.4))'
                                   }}
@@ -703,10 +701,10 @@ const StorageServices = () => {
                             </div>
                           );
                         })}
-                        
+
                         {/* User Location Marker */}
                         {userLocation && (
-                          <div 
+                          <div
                             className="absolute z-30"
                             style={{
                               left: `${Math.max(5, Math.min(90, ((userLocation.lon - 81.37) / (87.53 - 81.37)) * 100))}%`,
@@ -746,12 +744,11 @@ const StorageServices = () => {
                               <>
                                 <div className="flex items-start justify-between mb-4">
                                   <Badge className={
-                                    `text-sm px-3 py-1 ${
-                                    facility.type === 'Cold Storage' 
-                                      ? 'bg-blue-100 text-blue-800 border-blue-300' 
+                                    `text-sm px-3 py-1 ${facility.type === 'Cold Storage'
+                                      ? 'bg-blue-100 text-blue-800 border-blue-300'
                                       : facility.type === 'Warehouse'
-                                      ? 'bg-green-100 text-green-800 border-green-300'
-                                      : 'bg-orange-100 text-orange-800 border-orange-300'
+                                        ? 'bg-green-100 text-green-800 border-green-300'
+                                        : 'bg-orange-100 text-orange-800 border-orange-300'
                                     }`
                                   }>
                                     {facility.type}
@@ -764,7 +761,7 @@ const StorageServices = () => {
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">{facility.name}</h3>
                                 <p className="text-base text-gray-600 mb-4 leading-relaxed">{facility.address}</p>
-                                
+
                                 <div className="space-y-4 mb-5 bg-gray-50 rounded-lg p-4">
                                   <div className="flex justify-between items-center">
                                     <span className="text-base text-gray-600">Capacity:</span>
@@ -785,8 +782,8 @@ const StorageServices = () => {
                                     <Phone className="h-5 w-5 mr-2" />
                                     Call Now
                                   </Button>
-                                  <Button 
-                                    variant="outline" 
+                                  <Button
+                                    variant="outline"
                                     className="w-full py-3 text-base font-semibold border-2"
                                     onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${facility.lat},${facility.lon}`, '_blank')}
                                   >
@@ -826,26 +823,24 @@ const StorageServices = () => {
                             : 'bg-red-500';
 
                       return (
-                        <Card 
-                          key={facility.id} 
-                          className={`p-6 hover:shadow-xl transition-all cursor-pointer ${
-                            selectedFacility === facility.id ? 'ring-2 ring-green-500 shadow-xl' : ''
-                          }`}
+                        <Card
+                          key={facility.id}
+                          className={`p-6 hover:shadow-xl transition-all cursor-pointer ${selectedFacility === facility.id ? 'ring-2 ring-green-500 shadow-xl' : ''
+                            }`}
                           onClick={() => setSelectedFacility(facility.id)}
                         >
                           <div className="flex items-start justify-between mb-4">
                             <h4 className="text-xl font-bold text-gray-900 leading-tight pr-2">{facility.name}</h4>
-                            <Badge className={`ml-2 flex-shrink-0 text-sm px-3 py-1 ${
-                              facility.type === 'Cold Storage' 
-                                ? 'bg-blue-100 text-blue-800 border-blue-300' 
-                                : facility.type === 'Warehouse'
+                            <Badge className={`ml-2 flex-shrink-0 text-sm px-3 py-1 ${facility.type === 'Cold Storage'
+                              ? 'bg-blue-100 text-blue-800 border-blue-300'
+                              : facility.type === 'Warehouse'
                                 ? 'bg-green-100 text-green-800 border-green-300'
                                 : 'bg-orange-100 text-orange-800 border-orange-300'
-                            }`}>
+                              }`}>
                               {facility.type}
                             </Badge>
                           </div>
-                          
+
                           {/* Distance Badge */}
                           {facility.distance && (
                             <div className="mb-4">
@@ -855,7 +850,7 @@ const StorageServices = () => {
                               </Badge>
                             </div>
                           )}
-                          
+
                           <div className="space-y-3 mb-4">
                             <div className="flex items-start gap-3 text-base">
                               <MapPin className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
@@ -918,7 +913,7 @@ const StorageServices = () => {
                               <span className="text-gray-600 break-all">{facility.email}</span>
                             </div>
                           </div>
-                          
+
                           <div className="border-t pt-3 mb-3">
                             <p className="text-xs font-medium text-gray-500 mb-2">Features:</p>
                             <div className="flex flex-wrap gap-1">
@@ -927,10 +922,10 @@ const StorageServices = () => {
                               ))}
                             </div>
                           </div>
-                          
+
                           {/* Action Buttons */}
                           <div className="flex gap-3">
-                            <Button 
+                            <Button
                               className="flex-1 bg-green-600 hover:bg-green-700 text-sm py-3 font-semibold"
                               onClick={(e) => {
                                 e.stopPropagation();
@@ -940,7 +935,7 @@ const StorageServices = () => {
                               <Phone className="h-4 w-4 mr-2" />
                               Call Now
                             </Button>
-                            <Button 
+                            <Button
                               variant="outline"
                               className="flex-1 text-sm py-3 font-semibold border-2"
                               onClick={(e) => {
@@ -958,7 +953,7 @@ const StorageServices = () => {
                   </div>
                 </div>
               )}
-            </>
+            </div>
           )}
 
           <div className="grid md:grid-cols-2 gap-6 mb-12">
@@ -1014,8 +1009,8 @@ const StorageServices = () => {
                   <span>{t('storage.bioEnergy')}</span>
                 </li>
               </ul>
-              <Button 
-                className="w-full bg-green-600 hover:bg-green-700" 
+              <Button
+                className="w-full bg-green-600 hover:bg-green-700"
                 onClick={() => {
                   const element = document.getElementById('alternate-solutions');
                   element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1075,7 +1070,7 @@ const StorageServices = () => {
                 <p className="text-sm text-gray-700 mb-4">
                   {t('storage.storageDesc')}
                 </p>
-                
+
                 {/* Storage Guidelines Examples */}
                 <div className="bg-white rounded-lg p-4 mb-4 border border-amber-200">
                   <h5 className="font-semibold text-gray-800 mb-3 text-sm">📋 Key Storage Guidelines:</h5>
@@ -1146,8 +1141,8 @@ const StorageServices = () => {
                   </div>
                 </div>
 
-                <Button 
-                  variant="default" 
+                <Button
+                  variant="default"
                   size="sm"
                   className="bg-amber-600 hover:bg-amber-700"
                   onClick={() => {
@@ -1175,13 +1170,13 @@ const StorageServices = () => {
                       `• Stack height max 4 meters\n` +
                       `• Maintain stock register\n` +
                       `• Get insurance within 7 days\n\n` +
-                      `Contact: FarmLedge Support - support@farmledge.com`;
-                    
+                      `Contact: AgroVerse Support - support@AgroVerse.com`;
+
                     const blob = new Blob([guidelines], { type: 'text/plain' });
                     const url = window.URL.createObjectURL(blob);
                     const a = document.createElement('a');
                     a.href = url;
-                    a.download = 'Storage_Guidelines_FarmLedge.txt';
+                    a.download = 'Storage_Guidelines_AgroVerse.txt';
                     a.click();
                     window.URL.revokeObjectURL(url);
                   }}

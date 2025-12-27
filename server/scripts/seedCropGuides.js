@@ -8,7 +8,7 @@ import { CropGuide } from '../src/models/cropGuide.js'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/farmledge'
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/AgroVerse'
 const DATA_FILE = process.env.CROP_GUIDE_FILE || path.join(__dirname, '..', 'data', 'crop_guides.json')
 
 const fallbackGuides = [

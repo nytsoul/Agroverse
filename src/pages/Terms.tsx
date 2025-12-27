@@ -9,7 +9,7 @@ const Terms = () => {
       <main className="container mx-auto px-4 py-28 space-y-8">
         <div>
           <h1 className="text-3xl md:text-4xl font-bold">Terms of Service</h1>
-          <p className="text-muted-foreground max-w-2xl">The ground rules for using FarmLedge. We keep this simple and clear.</p>
+          <p className="text-muted-foreground max-w-2xl">The ground rules for using AgroVerse. We keep this simple and clear.</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -35,7 +35,7 @@ const Terms = () => {
         <Card className="p-6">
           <h3 className="font-semibold mb-3">Platform model (visual)</h3>
           <pre className="text-xs md:text-sm bg-muted rounded p-3 overflow-auto leading-6">
-{`[Users]
+            {`[Users]
   └─ Web App → [Server] → [Smart Contract]
   └─ Payments → [Provider] → Webhook → [Server] → Transfer
 

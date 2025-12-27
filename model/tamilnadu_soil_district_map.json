@@ -1,0 +1,153 @@
+{
+  "Ariyalur": [
+    "Mixed Red and Yellow",
+    "Red"
+  ],
+  "Chengalpattu": [
+    "Red",
+    "Laterite"
+  ],
+  "Chennai": [
+    "Coastal Saline",
+    "Red"
+  ],
+  "Coimbatore": [
+    "Black",
+    "Mixed Red and Black"
+  ],
+  "Cuddalore": [
+    "Deltaic Alluvial",
+    "Coastal Saline"
+  ],
+  "Dharmapuri": [
+    "Red",
+    "Laterite"
+  ],
+  "Dindigul": [
+    "Black",
+    "Mixed Red and Black",
+    "Brown Forest"
+  ],
+  "Erode": [
+    "Black",
+    "Mixed Red and Black"
+  ],
+  "Kallakurichi": [
+    "Red",
+    "Laterite"
+  ],
+  "Kanchipuram": [
+    "Red",
+    "Laterite"
+  ],
+  "Kanniyakumari": [
+    "Laterite",
+    "Coastal Saline"
+  ],
+  "Karur": [
+    "Mixed Red and Yellow",
+    "Red"
+  ],
+  "Krishnagiri": [
+    "Red",
+    "Laterite"
+  ],
+  "Madurai": [
+    "Black",
+    "Red"
+  ],
+  "Mayiladuthurai": [
+    "Deltaic Alluvial"
+  ],
+  "Nagapattinam": [
+    "Deltaic Alluvial",
+    "Coastal Saline"
+  ],
+  "Namakkal": [
+    "Mixed Red and Yellow",
+    "Red"
+  ],
+  "Nilgiris": [
+    "Brown Forest",
+    "Red"
+  ],
+  "Perambalur": [
+    "Mixed Red and Yellow",
+    "Red"
+  ],
+  "Pudukkottai": [
+    "Red",
+    "Black"
+  ],
+  "Ramanathapuram": [
+    "Coastal Saline",
+    "Laterite"
+  ],
+  "Ranipet": [
+    "Red",
+    "Laterite"
+  ],
+  "Salem": [
+    "Red",
+    "Mixed Red and Yellow"
+  ],
+  "Sivagangai": [
+    "Red",
+    "Black"
+  ],
+  "Tenkasi": [
+    "Laterite",
+    "Red"
+  ],
+  "Thanjavur": [
+    "Deltaic Alluvial",
+    "Black"
+  ],
+  "Theni": [
+    "Mixed Red and Black",
+    "Brown Forest"
+  ],
+  "Thoothukudi": [
+    "Laterite",
+    "Coastal Saline"
+  ],
+  "Tiruchirappalli": [
+    "Mixed Red and Yellow",
+    "Black"
+  ],
+  "Tirunelveli": [
+    "Laterite",
+    "Red"
+  ],
+  "Tirupathur": [
+    "Red",
+    "Laterite"
+  ],
+  "Tiruppur": [
+    "Black",
+    "Mixed Red and Black"
+  ],
+  "Tiruvallur": [
+    "Red",
+    "Laterite"
+  ],
+  "Tiruvannamalai": [
+    "Red",
+    "Laterite"
+  ],
+  "Tiruvarur": [
+    "Deltaic Alluvial"
+  ],
+  "Vellore": [
+    "Red",
+    "Laterite"
+  ],
+  "Viluppuram": [
+    "Red",
+    "Laterite"
+  ],
+  "Virudhunagar": [
+    "Laterite",
+    "Red"
+  ]
+}

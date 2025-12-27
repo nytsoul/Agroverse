@@ -4,13 +4,13 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { 
-  AlertCircle, CloudRain, Loader2, MapPin, RefreshCw, ThermometerSun, 
-  Wind, Droplets, Eye, Gauge, Cloud, CloudDrizzle, CloudSnow, 
+import {
+  AlertCircle, CloudRain, Loader2, MapPin, RefreshCw, ThermometerSun,
+  Wind, Droplets, Eye, Gauge, Cloud, CloudDrizzle, CloudSnow,
   Sun, CloudSun, CloudLightning, Cloudy, TrendingUp, TrendingDown
 } from "lucide-react";
 
-const FALLBACK_COORDS = { lat: 20.2961, lon: 85.8245 }; // Bhubaneswar, Odisha
+const FALLBACK_COORDS = { lat: 13.0827, lon: 80.2707 }; // Chennai, Tamil Nadu
 
 const severityColor: Record<string, string> = {
   low: "bg-emerald-100 text-emerald-800 border-emerald-200",
@@ -85,8 +85,8 @@ const generateHourlyData = (currentTemp?: number) => {
     return {
       hour: hour.getHours(),
       temp: Math.round(baseTemp + variation + Math.random() * 2 - 1),
-      label: hour.getHours() === 0 ? '12 am' : hour.getHours() === 12 ? '12 pm' : 
-             hour.getHours() > 12 ? `${hour.getHours() - 12} pm` : `${hour.getHours()} am`,
+      label: hour.getHours() === 0 ? '12 am' : hour.getHours() === 12 ? '12 pm' :
+        hour.getHours() > 12 ? `${hour.getHours() - 12} pm` : `${hour.getHours()} am`,
       time: `${hour.getHours()}:00`
     };
   });
@@ -146,7 +146,7 @@ export default function WeatherAlertWidget() {
           `/api/weather/current?lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}&lang=en`
         );
         const data = await resp.json();
-        
+
         if (!resp.ok || !data?.ok) {
           // Use mock data if API fails
           console.warn("Weather API failed, using mock data");
@@ -162,7 +162,7 @@ export default function WeatherAlertWidget() {
           setLoading(false);
           return;
         }
-        
+
         if (cancelled) return;
         setAlerts(data.alerts || []);
         setTemp(data.weather?.current?.main?.temp || 27);
@@ -273,7 +273,7 @@ export default function WeatherAlertWidget() {
               <div className="relative">
                 {getWeatherIcon(weatherCondition, "w-24 h-24")}
               </div>
-              
+
               {/* Temperature Display */}
               <div>
                 <div className="flex items-start gap-1">
@@ -305,7 +305,7 @@ export default function WeatherAlertWidget() {
                 </div>
               </div>
             </div>
-            
+
             {/* Location & Time */}
             <div className="text-right">
               <h2 className="text-2xl font-light mb-1 text-gray-800">Weather</h2>
@@ -316,10 +316,10 @@ export default function WeatherAlertWidget() {
                 <span className="text-2xl">{getWeatherEmoji(weatherCondition)}</span>
                 <span>{weatherCondition}</span>
               </div>
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                onClick={handleRefresh} 
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleRefresh}
                 disabled={loading}
                 className="mt-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100"
               >
@@ -351,7 +351,7 @@ export default function WeatherAlertWidget() {
                     <div key={i} className="border-t border-gray-200" />
                   ))}
                 </div>
-                
+
                 {/* SVG Chart */}
                 <svg className="absolute inset-0 w-full h-full p-4" preserveAspectRatio="none">
                   <defs>
@@ -360,20 +360,20 @@ export default function WeatherAlertWidget() {
                       <stop offset="100%" stopColor="rgb(147, 197, 253)" stopOpacity="0.1" />
                     </linearGradient>
                   </defs>
-                  
+
                   {/* Area fill with light blue gradient */}
                   <path
                     d={`
                       M ${hourlyData.slice(0, 8).map((point, i) => {
-                        const x = (i / 7) * 100;
-                        const y = ((35 - point.temp) / 20) * 100;
-                        return `${i === 0 ? 'M' : 'L'} ${x}% ${y}%`;
-                      }).join(' ')}
+                      const x = (i / 7) * 100;
+                      const y = ((35 - point.temp) / 20) * 100;
+                      return `${i === 0 ? 'M' : 'L'} ${x}% ${y}%`;
+                    }).join(' ')}
                       L 100% 100% L 0% 100% Z
                     `}
                     fill="url(#tempGradientLight)"
                   />
-                  
+
                   {/* Temperature line - connecting all points */}
                   <path
                     d={hourlyData.slice(0, 8).map((point, i) => {
@@ -387,7 +387,7 @@ export default function WeatherAlertWidget() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
-                  
+
                   {/* Data points */}
                   {hourlyData.slice(0, 8).map((point, i) => {
                     const x = (i / 7) * 100;
@@ -395,11 +395,11 @@ export default function WeatherAlertWidget() {
                     return (
                       <g key={i}>
                         <circle cx={`${x}%`} cy={`${y}%`} r="5" fill="white" stroke="rgb(59, 130, 246)" strokeWidth="2" />
-                        <text 
-                          x={`${x}%`} 
-                          y={`${y}%`} 
-                          textAnchor="middle" 
-                          dy="-14" 
+                        <text
+                          x={`${x}%`}
+                          y={`${y}%`}
+                          textAnchor="middle"
+                          dy="-14"
                           className="text-xs fill-gray-700 font-semibold"
                         >
                           {point.temp}°
@@ -408,7 +408,7 @@ export default function WeatherAlertWidget() {
                     );
                   })}
                 </svg>
-                
+
                 {/* X-axis labels */}
                 <div className="absolute -bottom-6 left-0 right-0 flex justify-between text-xs text-gray-600 px-4">
                   {hourlyData.slice(0, 8).map((point, i) => (
@@ -423,8 +423,8 @@ export default function WeatherAlertWidget() {
               <div className="relative h-48">
                 <div className="absolute inset-0 flex items-end justify-between gap-1">
                   {precipData.slice(0, 24).map((point, i) => (
-                    <div 
-                      key={i} 
+                    <div
+                      key={i}
                       className="flex-1 bg-blue-400 rounded-t hover:bg-blue-500 transition-colors"
                       style={{ height: `${point.precipitation}%` }}
                       title={`${Math.round(point.precipitation)}%`}
@@ -446,7 +446,7 @@ export default function WeatherAlertWidget() {
                     <div key={i} className="border-t border-gray-200" />
                   ))}
                 </div>
-                
+
                 <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
                   {/* Wind speed line - connecting all points */}
                   <path
@@ -461,7 +461,7 @@ export default function WeatherAlertWidget() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
-                  
+
                   {/* Data points */}
                   {windData.slice(0, 8).map((point, i) => {
                     const x = (i / 7) * 100;
@@ -469,11 +469,11 @@ export default function WeatherAlertWidget() {
                     return (
                       <g key={i}>
                         <circle cx={`${x}%`} cy={`${y}%`} r="5" fill="white" stroke="rgb(34, 197, 94)" strokeWidth="2" />
-                        <text 
-                          x={`${x}%`} 
-                          y={`${y}%`} 
-                          textAnchor="middle" 
-                          dy="-14" 
+                        <text
+                          x={`${x}%`}
+                          y={`${y}%`}
+                          textAnchor="middle"
+                          dy="-14"
                           className="text-xs fill-gray-700 font-semibold"
                         >
                           {point.speed}

@@ -35,6 +35,10 @@ import RetailerProfile from "./pages/profiles/RetailerProfile";
 import ConsumerProfile from "./pages/profiles/ConsumerProfile";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Verifiers from "./pages/Verifiers";
+import CscDashboard from "./pages/dashboards/CscDashboard";
+import AdminDashboard from "./pages/dashboards/AdminDashboard";
+import NetworkScan from "./pages/NetworkScan";
+
 
 const queryClient = new QueryClient();
 
@@ -45,48 +49,55 @@ const App = () => (
         <Toaster />
         <Sonner />
         <AuthProvider>
-          <BrowserRouter>
+          <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
             <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/how-it-works" element={<HowItWorks />} />
-            <Route path="/join" element={<Join />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/batch" element={<BatchDetails />} />
-            <Route path="/price-prediction" element={<PricePrediction />} />
-            <Route path="/weather-alerts" element={<WeatherAlerts />} />
-            <Route path="/storage-services" element={<StorageServices />} />
-            <Route path="/location-services" element={<LocationServices />} />
-            <Route path="/gov-schemes" element={<GovSchemes />} />
-            <Route path="/farmer/guides" element={<FarmerGuides />} />
+              <Route path="/" element={<Index />} />
+              <Route path="/how-it-works" element={<HowItWorks />} />
+              <Route path="/join" element={<Join />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/batch" element={<BatchDetails />} />
+              <Route path="/price-prediction" element={<PricePrediction />} />
+              <Route path="/weather-alerts" element={<WeatherAlerts />} />
+              <Route path="/storage-services" element={<StorageServices />} />
+              <Route path="/location-services" element={<LocationServices />} />
+              <Route path="/gov-schemes" element={<GovSchemes />} />
+              <Route path="/farmer/guides" element={<FarmerGuides />} />
 
-            <Route element={<ProtectedRoute role="farmer" />}> 
-              <Route path="/farmers" element={<Farmers />} />
-              <Route path="/profile/farmer" element={<FarmerProfile />} />
-            </Route>
-            <Route element={<ProtectedRoute role="distributor" />}> 
-              <Route path="/distributors" element={<Distributors />} />
-              <Route path="/profile/distributor" element={<DistributorProfile />} />
-            </Route>
-            <Route element={<ProtectedRoute role="retailer" />}> 
-              <Route path="/retailers" element={<Retailers />} />
-              <Route path="/profile/retailer" element={<RetailerProfile />} />
-            </Route>
-            <Route element={<ProtectedRoute role="consumer" />}> 
-              <Route path="/consumers" element={<Consumers />} />
-              <Route path="/profile/consumer" element={<ConsumerProfile />} />
-            </Route>
-            <Route element={<ProtectedRoute role="verifier" />}> 
-              <Route path="/verifiers" element={<Verifiers />} />
-            </Route>
-            <Route path="/blockchain-guide" element={<BlockchainGuide />} />
-            <Route path="/fair-trade" element={<FairTrade />} />
-            <Route path="/api-docs" element={<ApiDocs />} />
-            <Route path="/support" element={<Support />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/cookies" element={<Cookies />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
+              <Route element={<ProtectedRoute role="farmer" />}>
+                <Route path="/farmers" element={<Farmers />} />
+                <Route path="/profile/farmer" element={<FarmerProfile />} />
+              </Route>
+              <Route element={<ProtectedRoute role="distributor" />}>
+                <Route path="/distributors" element={<Distributors />} />
+                <Route path="/profile/distributor" element={<DistributorProfile />} />
+              </Route>
+              <Route element={<ProtectedRoute role="retailer" />}>
+                <Route path="/retailers" element={<Retailers />} />
+                <Route path="/profile/retailer" element={<RetailerProfile />} />
+              </Route>
+              <Route element={<ProtectedRoute role="consumer" />}>
+                <Route path="/consumers" element={<Consumers />} />
+                <Route path="/profile/consumer" element={<ConsumerProfile />} />
+              </Route>
+              <Route element={<ProtectedRoute role="verifier" />}>
+                <Route path="/verifiers" element={<Verifiers />} />
+              </Route>
+              <Route element={<ProtectedRoute role="csc" />}>
+                <Route path="/csc-dashboard" element={<CscDashboard />} />
+              </Route>
+              <Route element={<ProtectedRoute role="gov" />}>
+                <Route path="/gov-dashboard" element={<AdminDashboard />} />
+              </Route>
+              <Route path="/blockchain-guide" element={<BlockchainGuide />} />
+              <Route path="/fair-trade" element={<FairTrade />} />
+              <Route path="/api-docs" element={<ApiDocs />} />
+              <Route path="/support" element={<Support />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/cookies" element={<Cookies />} />
+              <Route path="/network-scan" element={<NetworkScan />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
         </AuthProvider>

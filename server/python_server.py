@@ -16,7 +16,7 @@ def load_model():
     if model is None:
         try:
             import joblib
-            model = joblib.load(os.path.join(model_dir, 'odisha_crop_price_predictor.joblib'))
+            model = joblib.load(os.path.join(model_dir, 'tamilnadu_crop_price_predictor.joblib'))
             model_columns = joblib.load(os.path.join(model_dir, 'model_columns.joblib'))
             print("[Python Server] Model loaded successfully")
         except Exception as e:
@@ -25,7 +25,7 @@ def load_model():
     return model, model_columns
 
 # Load soil map for validation
-with open(os.path.join(model_dir, 'odisha_soil_district_map.json'), 'r') as f:
+with open(os.path.join(model_dir, 'tamilnadu_soil_district_map.json'), 'r') as f:
     soil_map = json.load(f)
 
 @app.route('/predict', methods=['POST'])

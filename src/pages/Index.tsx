@@ -11,7 +11,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import heroClimate from "@/assets/hero-climate.png";
-import heroOdisha from "@/assets/hero-odisha.png";
+import heroTN from "@/assets/hero-tn.png";
 import heroGrowth from "@/assets/hero-growth.png";
 import heroSupply from "@/assets/hero-supply.jpg";
 import { QRCodeCanvas } from "qrcode.react";
@@ -19,7 +19,8 @@ import { useToast } from "@/components/ui/use-toast";
 import { Label } from "@/components/ui/label";
 import { useRef } from "react";
 
-const HERO_IMAGES = [heroClimate, heroOdisha, heroGrowth, heroSupply];
+
+const HERO_IMAGES = [heroClimate, heroTN, heroGrowth, heroSupply];
 
 const CROP_IMAGES: Record<string, string> = {
   "banana": "https://images.unsplash.com/photo-1528825871115-3581a5387919?q=80&w=2070&auto=format&fit=crop",
@@ -236,7 +237,7 @@ const Index = () => {
                 key={img}
                 src={img}
                 alt="Agricultural innovation"
-                className={`absolute inset-0 w-full h-full object-cover transition-all duration-[1500ms] ease-in-out ${index === currentImageIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
+                className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${index === currentImageIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
                   }`}
               />
             ))}
@@ -251,18 +252,7 @@ const Index = () => {
             <div className="max-w-6xl mx-auto">
               {/* Official Government Header */}
               <div className="flex items-start gap-8 mb-10">
-                <div className="relative">
-                  <div className="w-40 h-40 rounded-full shadow-2xl ring-4 ring-white/20 overflow-hidden">
-                    <img
-                      src="/src/assets/odisha-logo.jpg"
-                      alt="Odisha Government Emblem"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg border-4 border-white">
-                    <ShieldCheck className="w-7 h-7 text-white" />
-                  </div>
-                </div>
+
                 <div className="flex-1">
                   <div className="inline-flex items-center gap-2 mb-3 bg-white/15 backdrop-blur-md border border-white/25 rounded-full px-5 py-2">
                     <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse" />
@@ -408,6 +398,8 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+
 
         {/* How It Works Section - Government Style */}
         <section className="py-16 bg-white">
@@ -889,41 +881,7 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              {/* Voice Bot Assistant */}
-              <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-teal-50 to-cyan-50 border-2 border-teal-200 hover:border-teal-500">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="p-3 bg-teal-600 rounded-full text-white">
-                      <Mic className="w-6 h-6" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{t('voiceBot.title')}</h3>
-                      <Badge className="bg-teal-500 text-white">{t('voiceBot.badge')}</Badge>
-                    </div>
-                  </div>
-                  <ul className="space-y-2 mb-4 text-sm text-gray-700">
-                    <li className="flex items-start gap-2">
-                      <ChevronRight className="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" />
-                      <span>{t('voiceBot.features.multiLanguage')}</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <ChevronRight className="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" />
-                      <span>{t('voiceBot.features.realtimeVoice')}</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <ChevronRight className="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" />
-                      <span>{t('voiceBot.features.cropGuidance')}</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <ChevronRight className="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" />
-                      <span>{t('voiceBot.features.availability247')}</span>
-                    </li>
-                  </ul>
-                  <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white" onClick={() => toast({ title: t('voiceBot.comingSoon'), description: t('voiceBot.subtitle') })}>
-                    {t('voiceBot.tryVoiceBot')} <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </CardContent>
-              </Card>
+              // ...existing code...
             </div>
           </div>
         </section>

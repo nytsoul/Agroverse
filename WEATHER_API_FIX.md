@@ -164,7 +164,7 @@ Add to `server/.env`:
 OPENWEATHER_API_KEY=7e7ead3587341b8fa208f8807156cf76
 OPENWEATHER_UNITS=metric
 MONGODB_URI=mongodb+srv://...
-DB_NAME=FarmLedge
+DB_NAME=AgroVerse
 ```
 
 ## Mock Data Fallback

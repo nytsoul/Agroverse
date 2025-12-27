@@ -2,7 +2,7 @@
 import mongoose from 'mongoose'
 import { AwarenessResource } from '../src/models/awarenessResource.js'
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/farmledge'
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/AgroVerse'
 
 const sampleResources = [
   {

@@ -1,7 +1,7 @@
-{
+﻿{
   "metadata": {
     "generated_at": "2025-12-02 23:53:45",
-    "state": "Odisha",
+    "state": "Tamil Nadu",
     "total_crops": 82,
     "successful": 35,
     "failed": 47,
@@ -11,7 +11,7 @@
   "crops": {
     "Banana": {
       "crop": "Banana",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 3392,
       "date_range": {
         "start": "2002-10-10",
@@ -382,7 +382,7 @@
     },
     "Banana - Green": {
       "crop": "Banana - Green",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 480,
       "date_range": {
         "start": "2005-03-13",
@@ -446,7 +446,7 @@
     },
     "Onion-bhima shweta": {
       "crop": "Onion-bhima shweta",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 2394,
       "date_range": {
         "start": "2002-09-27",
@@ -821,7 +821,7 @@
     },
     "Bitter gourd": {
       "crop": "Bitter gourd",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 6600,
       "date_range": {
         "start": "2007-11-06",
@@ -1204,7 +1204,7 @@
     },
     "Brinjal": {
       "crop": "Brinjal",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 16218,
       "date_range": {
         "start": "2002-09-07",
@@ -1587,7 +1587,7 @@
     },
     "Cabbage": {
       "crop": "Cabbage",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 8090,
       "date_range": {
         "start": "2005-09-05",
@@ -1968,7 +1968,7 @@
     },
     "Onion-Bhima Super": {
       "crop": "Onion-Bhima Super",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 568,
       "date_range": {
         "start": "2010-12-07",
@@ -2068,7 +2068,7 @@
     },
     "Carrot": {
       "crop": "Carrot",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 2876,
       "date_range": {
         "start": "2009-02-05",
@@ -2419,7 +2419,7 @@
     },
     "Cauliflower": {
       "crop": "Cauliflower",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 5590,
       "date_range": {
         "start": "2002-09-12",
@@ -2773,7 +2773,7 @@
     },
     "Chili Red": {
       "crop": "Chili Red",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 140,
       "date_range": {
         "start": "2002-09-27",
@@ -2793,7 +2793,7 @@
     },
     "Garlic": {
       "crop": "Garlic",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 3090,
       "date_range": {
         "start": "2002-08-21",
@@ -3161,7 +3161,7 @@
     },
     "Green Chilli": {
       "crop": "Green Chilli",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 2173,
       "date_range": {
         "start": "2005-08-20",
@@ -3513,7 +3513,7 @@
     },
     "Groundnut": {
       "crop": "Groundnut",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 667,
       "date_range": {
         "start": "2005-03-13",
@@ -3653,7 +3653,7 @@
     },
     "Mango": {
       "crop": "Mango",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 1195,
       "date_range": {
         "start": "2003-05-19",
@@ -3784,7 +3784,7 @@
     },
     "Onion": {
       "crop": "Onion",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 17175,
       "date_range": {
         "start": "2002-07-12",
@@ -4167,7 +4167,7 @@
     },
     "Papaya": {
       "crop": "Papaya",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 2995,
       "date_range": {
         "start": "2006-02-04",
@@ -4541,7 +4541,7 @@
     },
     "Peas cod": {
       "crop": "Peas cod",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 628,
       "date_range": {
         "start": "2009-02-21",
@@ -4631,7 +4631,7 @@
     },
     "Potato": {
       "crop": "Potato",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 27991,
       "date_range": {
         "start": "2002-07-12",
@@ -5014,7 +5014,7 @@
     },
     "Pumpkin": {
       "crop": "Pumpkin",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 11181,
       "date_range": {
         "start": "2005-08-20",
@@ -5397,7 +5397,7 @@
     },
     "Raddish": {
       "crop": "Raddish",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 330,
       "date_range": {
         "start": "2006-11-25",
@@ -5458,7 +5458,7 @@
     },
     "Rice": {
       "crop": "Rice",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 7894,
       "date_range": {
         "start": "2002-07-12",
@@ -5841,7 +5841,7 @@
     },
     "Tomato": {
       "crop": "Tomato",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 22331,
       "date_range": {
         "start": "2005-09-01",
@@ -6224,7 +6224,7 @@
     },
     "Water Melon": {
       "crop": "Water Melon",
-      "state": "Odisha",
+      "state": "Tamil Nadu",
       "data_points": 681,
       "date_range": {
         "start": "2009-03-28",

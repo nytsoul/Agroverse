@@ -6,14 +6,16 @@ import {
   User,
   LogOut,
   Type,
-  Users
+  Users,
+  Activity,
+  BarChart3
 } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useAuth } from "@/context/AuthContext";
-import { useFontSize } from "@/context/FontSizeContext";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -27,7 +29,7 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useTranslation();
   const { user, logout } = useAuth();
-  const { increaseFontSize, decreaseFontSize, resetFontSize } = useFontSize();
+
 
   const navItems = [
     { label: t("nav.home"), href: "/" },
@@ -41,6 +43,16 @@ const Navigation = () => {
         { label: t("nav.locationServices"), href: "/location-services" },
         { label: t("nav.govSchemes"), href: "/gov-schemes" },
         { label: t("nav.zeroLossGuides"), href: "/farmer/guides" }
+      ]
+    },
+    {
+      label: t("nav.networkScan"),
+      href: "/network-scan",
+      children: [
+        { label: t("nav.technicalHub"), href: "/network-scan" },
+        { label: t("nav.cscMonitoring"), href: "/csc-dashboard" },
+        { label: t("nav.govOversight"), href: "/gov-dashboard" },
+        { label: t("nav.liveAnalyticsFeed"), href: "/#recent-batches" },
       ]
     },
     {
@@ -71,7 +83,7 @@ const Navigation = () => {
               <Leaf className="w-8 h-8 text-white" />
             </div>
             <div className="leading-tight">
-              <h1 className="font-serif font-bold text-2xl text-emerald-900 tracking-tight">FarmLedge</h1>
+              <h1 className="font-serif font-bold text-2xl text-emerald-900 tracking-tight">Agroverse</h1>
               <p className="text-xs font-medium text-slate-500 uppercase tracking-wider">{t('hero.badge')}</p>
             </div>
           </Link>
@@ -109,32 +121,7 @@ const Navigation = () => {
 
           {/* Actions - Right */}
           <div className="hidden md:flex items-center gap-4">
-            {/* Font Size Controls */}
-            <div className="flex items-center bg-slate-100 rounded-lg p-2 border border-slate-200 mr-2">
-              <button
-                onClick={decreaseFontSize}
-                className="p-2 hover:bg-white hover:shadow-sm rounded-md text-slate-600 transition-all"
-                title="Decrease Font Size"
-              >
-                <div className="text-sm font-bold">A-</div>
-              </button>
-              <div className="w-px h-5 bg-slate-300 mx-1.5"></div>
-              <button
-                onClick={resetFontSize}
-                className="p-2 hover:bg-white hover:shadow-sm rounded-md text-slate-600 transition-all"
-                title="Reset Font Size"
-              >
-                <div className="text-base font-bold">A</div>
-              </button>
-              <div className="w-px h-5 bg-slate-300 mx-1.5"></div>
-              <button
-                onClick={increaseFontSize}
-                className="p-2 hover:bg-white hover:shadow-sm rounded-md text-slate-600 transition-all"
-                title="Increase Font Size"
-              >
-                <div className="text-lg font-bold">A+</div>
-              </button>
-            </div>
+
 
             <LanguageSwitcher />
 
@@ -162,6 +149,12 @@ const Navigation = () => {
                   <DropdownMenuItem asChild><Link to="/retailers">{t("nav.retailers")}</Link></DropdownMenuItem>
                   <DropdownMenuItem asChild><Link to="/consumers">{t("nav.consumers")}</Link></DropdownMenuItem>
                   <DropdownMenuItem asChild><Link to="/verifiers">{t("nav.verifiers")}</Link></DropdownMenuItem>
+                  {user?.role === 'csc' && (
+                    <DropdownMenuItem asChild><Link to="/csc-dashboard">CSC Dashboard</Link></DropdownMenuItem>
+                  )}
+                  {user?.role === 'gov' && (
+                    <DropdownMenuItem asChild><Link to="/gov-dashboard">Gov Dashboard</Link></DropdownMenuItem>
+                  )}
                   <DropdownMenuSeparator />
                   <DropdownMenuItem className="text-red-600 cursor-pointer" onClick={logout}>
                     <LogOut className="w-4 h-4 mr-2" />
@@ -222,15 +215,7 @@ const Navigation = () => {
               )
             ))}
 
-            {/* Mobile Font Controls */}
-            <div className="px-4 flex items-center gap-4">
-              <span className="text-base text-slate-500">Font Size:</span>
-              <div className="flex items-center bg-slate-100 rounded-lg p-1 border border-slate-200">
-                <button onClick={decreaseFontSize} className="p-2 hover:bg-white rounded text-xs font-bold">A-</button>
-                <button onClick={resetFontSize} className="p-2 hover:bg-white rounded text-sm font-bold">A</button>
-                <button onClick={increaseFontSize} className="p-2 hover:bg-white rounded text-base font-bold">A+</button>
-              </div>
-            </div>
+
 
             <div className="px-4 pt-4 border-t border-slate-100">
               {user ? (

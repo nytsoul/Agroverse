@@ -1,7 +1,7 @@
-# FarmLedge System Documentation
+# AgroVerse System Documentation
 
 ## 1. Overview
-FarmLedge is a blockchain-based supply chain management platform connecting Farmers, Distributors, Retailers, and Consumers. It ensures transparency, traceability, and fair pricing using the Arbitrum Sepolia testnet.
+AgroVerse is a blockchain-based supply chain management platform connecting Farmers, Distributors, Retailers, and Consumers. It ensures transparency, traceability, and fair pricing using the Arbitrum Sepolia testnet.
 
 ## 2. Technical Architecture
 

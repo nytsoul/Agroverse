@@ -24,7 +24,7 @@
 
 #### Backend (Python)
 ```bash
-cd d:\Programming\Projects\FarmLedge
+cd d:\Programming\Projects\AgroVerse
 pip install -r model/requirements.txt
 ```
 
@@ -260,7 +260,7 @@ This will:
 ## 📝 File Structure
 
 ```
-FarmLedge/
+AgroVerse/
 ├── model/
 │   ├── odisha_soil_district_map.json    # Real soil data
 │   ├── train_model.py                   # Training script

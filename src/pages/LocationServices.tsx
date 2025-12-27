@@ -55,134 +55,135 @@ const LocationServices = () => {
   const [networkMembers, setNetworkMembers] = useState<NetworkMember[]>([]);
 
   // Mock network members data
+  // Mock network members data
   const mockNetworkMembers: NetworkMember[] = [
     {
       id: "1",
-      name: "Rajesh Kumar",
+      name: "Ramesh Kumar",
       role: "Farmer",
-      location: "Bhubaneswar, Odisha",
+      location: "Chennai, Tamil Nadu",
       crops: ["Rice", "Vegetables"],
-      contact: "+91-9437012345",
+      contact: "+91-9444012345",
       verified: true,
       joinedDate: "2024-01-15"
     },
     {
       id: "2",
-      name: "Sunita Patel",
+      name: "Lakshmi Priya",
       role: "Distributor",
-      location: "Cuttack, Odisha",
-      contact: "+91-9437098765",
+      location: "Coimbatore, Tamil Nadu",
+      contact: "+91-9444098765",
       verified: true,
       joinedDate: "2024-03-20"
     },
     {
       id: "3",
-      name: "Mahesh Sahoo",
+      name: "Muthu Vel",
       role: "Retailer",
-      location: "Puri, Odisha",
-      contact: "+91-9437067890",
+      location: "Madurai, Tamil Nadu",
+      contact: "+91-9444067890",
       verified: true,
       joinedDate: "2024-02-10"
     },
     {
       id: "4",
-      name: "Priya Mishra",
+      name: "Kavitha Reddy",
       role: "Farmer",
-      location: "Berhampur, Odisha",
-      crops: ["Turmeric", "Cashew"],
-      contact: "+91-9437054321",
+      location: "Salem, Tamil Nadu",
+      crops: ["Turmeric", "Mango"],
+      contact: "+91-9444054321",
       verified: true,
       joinedDate: "2024-04-05"
     },
     {
       id: "5",
-      name: "Anil Jena",
+      name: "Ananthan",
       role: "Cooperative",
-      location: "Sambalpur, Odisha",
-      contact: "+91-9437011111",
+      location: "Tiruchirappalli, Tamil Nadu",
+      contact: "+91-9444011111",
       verified: true,
       joinedDate: "2024-01-30"
     },
     {
       id: "6",
-      name: "Kavita Nayak",
+      name: "Meena Kumari",
       role: "Verifier",
-      location: "Bhubaneswar, Odisha",
-      contact: "+91-9437022222",
+      location: "Chennai, Tamil Nadu",
+      contact: "+91-9444022222",
       verified: true,
       joinedDate: "2024-05-12"
     }
   ];
 
-  // Mock services data for Odisha
+  // Mock services data for Tamil Nadu
   const mockServices: Service[] = [
     {
       id: "1",
-      name: "Krishi Vigyan Kendra, Bhubaneswar",
+      name: "Krishi Vigyan Kendra, Kattupakkam",
       type: "kvk",
-      address: "OUAT Campus, Bhubaneswar, Odisha 751003",
-      phone: "+91-674-2397780",
-      email: "kvk.bbsr@ouat.ac.in",
+      address: "Kattupakkam, Chennai, Tamil Nadu 603203",
+      phone: "+91-44-2397780",
+      email: "kvk.kattupakkam@tnau.ac.in",
       distance: "2.5 km",
       rating: 4.5,
       services: ["Soil Testing", "Training Programs", "Farm Advisory", "Demonstrations"],
-      coordinates: { lat: 20.2961, lng: 85.8245 }
+      coordinates: { lat: 12.8229, lng: 80.0440 }
     },
     {
       id: "2",
       name: "State Soil Testing Laboratory",
       type: "lab",
-      address: "Directorate of Agriculture, Bhubaneswar, Odisha",
-      phone: "+91-674-2536071",
-      email: "soillab.odisha@gov.in",
+      address: "Anna Salai, Chennai, Tamil Nadu",
+      phone: "+91-44-2536071",
+      email: "soillab.tn@gov.in",
       distance: "3.8 km",
       rating: 4.2,
       services: ["Soil Analysis", "Water Testing", "Fertilizer Recommendation", "Soil Health Card"],
-      coordinates: { lat: 20.2700, lng: 85.8400 }
+      coordinates: { lat: 13.0827, lng: 80.2707 }
     },
     {
       id: "3",
       name: "Farm Equipment Rental - AgriMech",
       type: "equipment",
-      address: "Patia, Bhubaneswar, Odisha 751024",
-      phone: "+91-9437012345",
+      address: "Guindy, Chennai, Tamil Nadu 600032",
+      phone: "+91-9444012345",
       distance: "5.2 km",
       rating: 4.7,
       services: ["Tractor Rental", "Harvester", "Sprayer", "Seeder"],
-      coordinates: { lat: 20.3500, lng: 85.8200 }
+      coordinates: { lat: 13.0067, lng: 80.2206 }
     },
     {
       id: "4",
-      name: "Veterinary Dispensary, Unit-6",
+      name: "Veterinary Dispensary, Anna Nagar",
       type: "veterinary",
-      address: "Unit-6, Bhubaneswar, Odisha 751001",
-      phone: "+91-674-2301234",
+      address: "Anna Nagar, Chennai, Tamil Nadu 600040",
+      phone: "+91-44-2301234",
       distance: "1.8 km",
       rating: 4.3,
       services: ["Vaccination", "Treatment", "Emergency Care", "Consultation"],
-      coordinates: { lat: 20.2800, lng: 85.8300 }
+      coordinates: { lat: 13.0850, lng: 80.2100 }
     },
     {
       id: "5",
-      name: "Saheed Nagar APMC Yard",
+      name: "Koyambedu Wholesale Market",
       type: "market",
-      address: "Saheed Nagar, Bhubaneswar, Odisha",
-      phone: "+91-674-2543210",
+      address: "Koyambedu, Chennai, Tamil Nadu",
+      phone: "+91-44-2543210",
       distance: "4.1 km",
       rating: 4.0,
       services: ["Vegetable Market", "Grain Market", "Wholesale", "Auction"],
-      coordinates: { lat: 20.2950, lng: 85.8400 }
+      coordinates: { lat: 13.0694, lng: 80.1948 }
     },
     {
       id: "6",
-      name: "Organic Farmers Market",
+      name: "Organic Farmers Market, Adyar",
       type: "market",
-      address: "Forest Park, Bhubaneswar, Odisha",
-      phone: "+91-9437098765",
+      address: "Adyar, Chennai, Tamil Nadu",
+      phone: "+91-9444098765",
       distance: "6.5 km",
       rating: 4.6,
       services: ["Organic Produce", "Direct Selling", "Weekly Market", "Fresh Vegetables"],
-      coordinates: { lat: 20.2600, lng: 85.8100 }
+      coordinates: { lat: 13.0012, lng: 80.2565 }
     }
   ];
 
@@ -193,30 +194,30 @@ const LocationServices = () => {
 
   const getLocation = () => {
     setLoading(true);
-    
+
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
         async (position) => {
           const { latitude, longitude } = position.coords;
-          
+
           try {
             // Reverse geocoding to get location details
             const response = await fetch(
               `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
             );
             const data = await response.json();
-            
+
             setLocation({
               latitude,
               longitude,
-              city: data.address.city || data.address.town || data.address.village || "Bhubaneswar",
-              state: data.address.state || "Odisha"
+              city: data.address.city || data.address.town || data.address.village || "Chennai",
+              state: data.address.state || "Tamil Nadu"
             });
-            
+
             toast.success("Location Detected", {
-              description: `${data.address.city || "Bhubaneswar"}, ${data.address.state || "Odisha"}`
+              description: `${data.address.city || "Chennai"}, ${data.address.state || "Tamil Nadu"}`
             });
-            
+
             // Filter services based on location
             setNearbyServices(mockServices);
           } catch (error) {
@@ -224,8 +225,8 @@ const LocationServices = () => {
             setLocation({
               latitude,
               longitude,
-              city: "Bhubaneswar",
-              state: "Odisha"
+              city: "Chennai",
+              state: "Tamil Nadu"
             });
           } finally {
             setLoading(false);
@@ -248,19 +249,19 @@ const LocationServices = () => {
 
   const filterServices = () => {
     let filtered = mockServices;
-    
+
     if (selectedService !== "all") {
       filtered = filtered.filter(s => s.type === selectedService);
     }
-    
+
     if (searchQuery) {
-      filtered = filtered.filter(s => 
+      filtered = filtered.filter(s =>
         s.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         s.address.toLowerCase().includes(searchQuery.toLowerCase()) ||
         s.services.some(service => service.toLowerCase().includes(searchQuery.toLowerCase()))
       );
     }
-    
+
     return filtered;
   };
 
@@ -329,7 +330,7 @@ const LocationServices = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-rose-50">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-r from-rose-700 via-pink-600 to-purple-700">
         <div className="container mx-auto px-4">
@@ -468,7 +469,7 @@ const LocationServices = () => {
               </AlertDescription>
             </Alert>
           )}
-          
+
           <div className="mb-6">
             <h2 className="text-2xl font-bold text-gray-900">
               Nearby Services {location && `in ${location.city}`}
@@ -575,7 +576,7 @@ const LocationServices = () => {
               <Users className="h-12 w-12 mx-auto mb-4 text-rose-600" />
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Network</h3>
               <p className="text-sm text-gray-600 mb-4">
-                Connect with 500+ farmers and stakeholders in Odisha
+                Connect with 500+ farmers and stakeholders in Tamil Nadu
               </p>
               <Button variant="outline" className="w-full" onClick={openNetworkView}>
                 View Network
@@ -613,7 +614,7 @@ const LocationServices = () => {
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
               <Users className="h-6 w-6 text-rose-600" />
-              Agricultural Network in Odisha
+              Agricultural Network in Tamil Nadu
             </DialogTitle>
             <DialogDescription>
               Connect with farmers, distributors, retailers, and other stakeholders in your region
@@ -689,7 +690,7 @@ const LocationServices = () => {
           <div className="mt-6 p-4 bg-gradient-to-r from-rose-50 to-purple-50 rounded-lg">
             <h4 className="font-semibold text-gray-900 mb-2">Join the Network</h4>
             <p className="text-sm text-gray-600 mb-3">
-              Become part of Odisha's largest agricultural network and connect with stakeholders
+              Become part of Tamil Nadu's largest agricultural network and connect with stakeholders
             </p>
             <Button className="w-full">
               <Users className="h-4 w-4 mr-2" />

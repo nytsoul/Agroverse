@@ -48,13 +48,13 @@ const formatTravelTime = (minutes: number): string => {
   if (minutes < 60) {
     return `${minutes} min${minutes !== 1 ? 's' : ''}`;
   }
-  
+
   const days = Math.floor(minutes / 1440); // 1440 minutes in a day
   const hours = Math.floor((minutes % 1440) / 60);
   const mins = Math.floor(minutes % 60);
-  
+
   const parts: string[] = [];
-  
+
   if (days > 0) {
     parts.push(`${days} day${days !== 1 ? 's' : ''}`);
   }
@@ -64,7 +64,7 @@ const formatTravelTime = (minutes: number): string => {
   if (mins > 0) {
     parts.push(`${mins} min${mins !== 1 ? 's' : ''}`);
   }
-  
+
   return parts.join(' ');
 };
 
@@ -75,7 +75,7 @@ const DistributorMap = () => {
   const [error, setError] = useState<string | null>(null);
   const [locationStatus, setLocationStatus] = useState<string>('Detecting location...');
   const [showFarmers, setShowFarmers] = useState(false); // Toggle between layers
-  
+
   // Use refs for mutable state that doesn't need re-renders
   const distributorLocationRef = useRef<{ lat: number; lng: number } | null>(null);
   const activeRouteLineRef = useRef<any>(null);
@@ -87,7 +87,7 @@ const DistributorMap = () => {
     if (!mapContainerRef.current || mapRef.current) return;
 
     // Initialize map
-    const map = L.map(mapContainerRef.current).setView([20.46, 85.88], 8);
+    const map = L.map(mapContainerRef.current).setView([11.12, 78.65], 7);
     mapRef.current = map;
 
     // Add OpenStreetMap tiles
@@ -100,7 +100,7 @@ const DistributorMap = () => {
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         distributorLocationRef.current = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-        
+
         // Add draggable marker for distributor location
         const marker = L.marker([pos.coords.latitude, pos.coords.longitude], { draggable: true })
           .bindPopup("<b>Your Location</b><br>Drag to refine")
@@ -118,12 +118,12 @@ const DistributorMap = () => {
       },
       (error) => {
         console.error('Geolocation error:', error);
-        distributorLocationRef.current = { lat: 20.46, lng: 85.88 };
-        setLocationStatus('Using default location (Odisha center)');
-        
+        distributorLocationRef.current = { lat: 11.12, lng: 78.65 };
+        setLocationStatus('Using default location (Tamil Nadu center)');
+
         // Add marker at default location
-        L.marker([20.46, 85.88], { draggable: true })
-          .bindPopup("<b>Default Location</b><br>Odisha, India<br>Drag to set your location")
+        L.marker([11.12, 78.65], { draggable: true })
+          .bindPopup("<b>Default Location</b><br>Tamil Nadu, India<br>Drag to set your location")
           .on('dragend', (e: any) => {
             const newPos = e.target.getLatLng();
             distributorLocationRef.current = { lat: newPos.lat, lng: newPos.lng };
@@ -131,7 +131,7 @@ const DistributorMap = () => {
             console.log('Manual location set:', distributorLocationRef.current);
           })
           .addTo(map);
-        
+
         console.log('Default location set:', distributorLocationRef.current);
       },
       { enableHighAccuracy: true, timeout: 10000 }
@@ -139,7 +139,7 @@ const DistributorMap = () => {
 
     // Load GeoJSON and crop data
     Promise.all([
-      fetch(`${window.location.origin}/data/odisha_cropland.geojson`).then(res => {
+      fetch(`${window.location.origin}/data/tn_cropland.geojson`).then(res => {
         if (!res.ok) throw new Error(`Failed to load GeoJSON: ${res.status}`);
         return res.json();
       }),
@@ -155,13 +155,13 @@ const DistributorMap = () => {
         style: (feature) => {
           const code = feature?.properties?.BlockCode;
           const info: Partial<CropInfo> = cropLookupRef.current[code] || {};
-          const color = info.soil_grade === 'A' ? '#38761d' : 
-                       info.soil_grade === 'B' ? '#6aa84f' : '#8fbc8f';
-          return { 
-            color: '#2d5016', 
-            weight: 2, 
-            fillColor: color, 
-            fillOpacity: 0.5 
+          const color = info.soil_grade === 'A' ? '#38761d' :
+            info.soil_grade === 'B' ? '#6aa84f' : '#8fbc8f';
+          return {
+            color: '#2d5016',
+            weight: 2,
+            fillColor: color,
+            fillOpacity: 0.5
           };
         },
         onEachFeature: (feature, layer: any) => {
@@ -259,25 +259,25 @@ const DistributorMap = () => {
                   }
 
                   const route = data.routes[0];
-                  
+
                   console.log('Route data:', route);
                   console.log('Route geometry:', route.geometry);
-                  
+
                   if (!route.summary) {
                     throw new Error('Invalid route data');
                   }
-                  
+
                   const distance_km = (route.summary.distance / 1000).toFixed(1);
                   const travel_time_min = Math.round(route.summary.duration / 60);
                   const formatted_time = formatTravelTime(travel_time_min);
 
                   // Get coordinates from geometry
                   let coordinates: [number, number][] = [];
-                  
+
                   if (route.geometry && route.geometry.coordinates && Array.isArray(route.geometry.coordinates)) {
                     console.log('Geometry coordinates count:', route.geometry.coordinates.length);
                     console.log('First few coordinates:', route.geometry.coordinates.slice(0, 3));
-                    
+
                     // GeoJSON format: coordinates are [lng, lat], need to swap to [lat, lng] for Leaflet
                     coordinates = route.geometry.coordinates.map((coord: number[]) => [coord[1], coord[0]]);
                     console.log('✅ Using actual road route with', coordinates.length, 'points');
@@ -426,7 +426,7 @@ const DistributorMap = () => {
 
                     // Get coordinates from geometry
                     let coordinates: [number, number][] = [];
-                    
+
                     if (route.geometry && route.geometry.coordinates && Array.isArray(route.geometry.coordinates)) {
                       coordinates = route.geometry.coordinates.map((coord: number[]) => [coord[1], coord[0]]);
                     } else {
@@ -477,7 +477,7 @@ const DistributorMap = () => {
     if (mapRef.current && activeRouteLineRef.current) {
       mapRef.current.removeLayer(activeRouteLineRef.current);
       activeRouteLineRef.current = null;
-      mapRef.current.setView([20.46, 85.88], 8);
+      mapRef.current.setView([11.12, 78.65], 7);
     }
   };
 
@@ -516,7 +516,7 @@ const DistributorMap = () => {
           Collection Route Planner
         </CardTitle>
         <CardDescription>
-          Interactive map showing agricultural cropland areas and individual farmers in Odisha. Toggle between crop regions and farmer contacts, then calculate driving routes to plan your collection logistics.
+          Interactive map showing agricultural cropland areas and individual farmers in Tamil Nadu. Toggle between crop regions and farmer contacts, then calculate driving routes to plan your collection logistics.
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -569,8 +569,8 @@ const DistributorMap = () => {
               </div>
             </div>
           )}
-          <div 
-            ref={mapContainerRef} 
+          <div
+            ref={mapContainerRef}
             className="w-full h-[600px] rounded-lg border-2 border-slate-200"
             style={{ zIndex: 0 }}
           />
@@ -579,7 +579,7 @@ const DistributorMap = () => {
         <Alert>
           <Info className="w-4 h-4" />
           <AlertDescription className="text-xs">
-            <strong>How to use:</strong> Click on any colored region to view crop information. 
+            <strong>How to use:</strong> Click on any colored region to view crop information.
             Use the "Calculate Route" button to get driving directions and distance from your location.
             Soil grades: A (Best), B (Good), C (Fair).
           </AlertDescription>

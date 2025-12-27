@@ -1,23 +1,23 @@
 import seasonalityDataRaw from '@/data/seasonality_database.json';
 
 export interface CropData {
-  crop: string;
-  state: string;
-  data_points: number;
-  date_range: {
-    start: string;
-    end: string;
-  };
-  weights: {
-    recent: number;
-    long_term: number;
-  };
-  seasonality_factors: Record<string, number>;
+    crop: string;
+    state: string;
+    data_points: number;
+    date_range: {
+        start: string;
+        end: string;
+    };
+    weights: {
+        recent: number;
+        long_term: number;
+    };
+    seasonality_factors: Record<string, number>;
 }
 
 export interface SeasonalityData {
-  metadata: any;
-  crops: Record<string, CropData>;
+    metadata: any;
+    crops: Record<string, CropData>;
 }
 
 const seasonalityData = seasonalityDataRaw as unknown as SeasonalityData;
@@ -64,7 +64,7 @@ export const fetchRecentPrice = async (crop: string) => {
             'format': 'json',
             'limit': '100',
             'filters[Commodity]': crop,
-            'filters[State]': 'Odisha',
+            'filters[State]': 'Tamil Nadu',
             'sort[Arrival_Date]': 'desc'
         });
 

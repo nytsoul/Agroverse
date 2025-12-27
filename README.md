@@ -1,5 +1,51 @@
-# FarmLedge
+# AgroVerse
+AgroVerse is a transparent agricultural supply chain platform leveraging blockchain (Arbitrum Sepolia), INR-denominated pricing, and Stripe for payments. It supports robust, role-based access for farmers, distributors, retailers, consumers, verifiers, and admins, with advanced dashboards and multi-language support.
 
+## Key Features
+
+- **On-Chain Batch Registry**: Produce batches are registered on-chain with INR pricing (whole rupees), ensuring transparency and traceability.
+- **Stripe Payment Integration**: Off-chain payments are handled via Stripe, with INR-to-paise conversion and secure webhook verification.
+- **Relayer-Based Ownership Transfer**: Only a relayer (verifier) can transfer batch ownership on-chain after payment confirmation.
+- **Role-Based Authentication**: Six roles (farmer, distributor, retailer, consumer, verifier, admin) with protected routes and dedicated profile pages.
+- **Batch Verification Lifecycle**: Batches move through unverified, pending, and verified states, managed by verifiers via a dashboard.
+- **React Frontend (Vite + shadcn UI)**: Modern UI with reusable components, protected routes, and i18n (English, Hindi, Tamil, Odia).
+- **Wagmi & MetaMask Integration**: Blockchain state and wallet connection managed via wagmi and React Query.
+- **Express Backend**: Handles API endpoints, Stripe webhooks, and blockchain relayer operations.
+- **Idempotent Webhook Handling**: Prevents duplicate ownership transfers on Stripe webhook retries.
+- **Data Fetching & Caching**: Uses React Query for efficient data management and caching.
+- **Internationalization (i18n)**: Multi-language support with persistent language preference across all dashboards, including admin/government oversight.
+- **IoT Alerts & Weather Integration**: Components for weather alerts and IoT notifications for stakeholders.
+- **QR Code Scanning**: QRScanner component for batch tracking and verification.
+- **Soil & Crop Analysis**: SoilAnalyzer and CropPricePrediction modules for data-driven insights.
+- **Robust Admin & Verifier Tools**: Redesigned dashboards for managing verification, batch status, and relayer setup, including:
+  - Advanced batch search (case-insensitive, resilient to input errors)
+  - Downloadable compliance reports with fallback/static PDF support
+  - Modals for batch history and certificates
+  - Live feed for real-time updates
+  - Full i18n coverage
+- **Testing & Simulation**: Includes test scripts for contract, webhook, and API simulation.
+- **Extensive Documentation**: Architecture, API, and integration guides in the docs/ folder.
+
+
+## File Structure Overview
+
+See the project root and `src/`, `server/`, and `model/` folders for code organization. Key files and folders:
+
+- `src/components/` – UI and functional components (shadcn, dashboards, widgets)
+- `src/context/` – Auth and font size context
+- `src/pages/` – Route handlers and profile pages (including robust Admin/Government dashboard)
+- `src/lib/` – Blockchain, contract, and utility logic
+- `src/i18n/` & `src/locales/` – i18n setup and translations
+- `server/src/` – Express server, contract, verification, and API logic
+- `model/` – Crop price prediction ML model and scripts
+- `contracts/` – AgriTruthChain smart contract
+
+## Getting Started
+
+See the [copilot-instructions.md](.github/copilot-instructions.md) for detailed setup, development, and deployment instructions.
+
+---
+*This README was updated to reflect all current features as of December 2025.*
 > **A transparent agricultural supply chain platform**  
 > Batches registered on-chain with purchases via Stripe; a verifier account transfers ownership on-chain after payment.
 
@@ -7,7 +53,7 @@
 
 ## 🚀 Tech Stack
 
-The following technologies power **FarmLedge**, along with their icons and usage:
+The following technologies power **AgroVerse**, along with their icons and usage:
 
 <details>
 <summary>Frontend</summary>
@@ -159,8 +205,8 @@ The following technologies power **FarmLedge**, along with their icons and usage
 
 ```bash
 # Clone the repo
-git clone https://github.com/blackscythe123/FarmLedge.git
-cd FarmLedge
+git clone https://github.com/blackscythe123/AgroVerse.git
+cd AgroVerse
 
 # Install frontend dependencies
 npm install
@@ -322,16 +368,23 @@ Response returns a transaction hash on success.
 ℹ️ API Documentation Link
 
 The footer "API Documentation" link points to this README’s API section on GitHub:  
-https://github.com/blackscythe123/FarmLedge#api-endpoints
+https://github.com/blackscythe123/AgroVerse#api-endpoints
+
 
 🎨 Frontend Highlights
 
 - **Recent Batches Timeline**  
   Paginated view (3 per page), searchable by Batch ID on Index. Status badges (Unverified/Pending/Verified) visible.
-- **Verifier Dashboard**  
-  Search + sort controls, themed verification modal with passkey, and strict one-way transitions.
+- **Verifier & Admin Dashboards**  
+  - Advanced batch search (case-insensitive, robust to typos)
+  - Download compliance reports (with static fallback)
+  - Modals for batch history/certificates
+  - Live feed for real-time updates
+  - Full i18n/multi-language support
 - **Footer Resources**  
   Includes a GitHub link to the repo and API Documentation linking back to this README’s API section.
+- **Voice Bot Assistant Removed**  
+  The Voice Bot Assistant has been removed for a cleaner, more focused UI.
 
 🛠️ Scripts
 
@@ -356,6 +409,7 @@ https://github.com/blackscythe123/FarmLedge#api-endpoints
 }
 ```
 
+
 ⚠️ Troubleshooting
 
 - **Webhook Signature Errors**  
@@ -366,6 +420,10 @@ https://github.com/blackscythe123/FarmLedge#api-endpoints
   Confirm `RELAYER_PRIVATE_KEY` has sufficient Sepolia ETH.
 - **Pricing Mismatch**  
   Stripe sends amounts in paise; contract stores rupees—convert appropriately.
+- **Batch Search/Download Issues**  
+  Admin dashboard batch search and download are robust, but ensure correct batch IDs and check for static PDF fallback if download fails.
+- **Crop Prediction Not Working?**  
+  Make sure the Python ML server is running (`python_server.py` in the `server` folder) for crop price prediction features.
 
 🔒 Security & Data
 

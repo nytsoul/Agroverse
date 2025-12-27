@@ -126,8 +126,13 @@ const Retailers = () => {
     if (!selectedBatchData) return 0;
     const qty = Number(buyQuantity);
     if (!Number.isFinite(qty) || qty <= 0) return 0;
+    const consumerPrice = Number(consumerPriceInr);
+    // Use consumer price if valid and >= distributor price, else fallback
+    if (consumerPriceInr && !isNaN(consumerPrice) && consumerPrice >= pricePerKg) {
+      return consumerPrice * qty;
+    }
     return pricePerKg * qty;
-  }, [buyQuantity, pricePerKg, selectedBatchData]);
+  }, [buyQuantity, pricePerKg, consumerPriceInr, selectedBatchData]);
 
   const validateAddress = (value: string) => {
     const trimmed = value?.trim();

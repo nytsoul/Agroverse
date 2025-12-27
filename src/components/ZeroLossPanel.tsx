@@ -180,7 +180,7 @@ export function ZeroLossPanel({ batchId, cropType }: { batchId: string; cropType
             {/* Footer Info */}
             <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
               <div className="text-xs text-slate-400">
-                Data sourced from Odisha University of Agriculture & Technology
+                Data sourced from Tamil Nadu Agricultural University
               </div>
               <Button variant="ghost" className="text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50">
                 <Info className="w-4 h-4 mr-2" /> Full Guide
