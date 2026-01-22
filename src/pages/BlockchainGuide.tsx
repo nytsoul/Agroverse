@@ -15,7 +15,7 @@ type Batch = {
 const BlockchainGuide = () => {
   const [batches, setBatches] = useState<Batch[]>([]);
   const [loading, setLoading] = useState(true);
-  useEffect(() => { (async () => { try { setLoading(true); const r = await fetch('/api/batches'); const d = await r.json(); setBatches(d?.batches || []);} catch {} finally { setLoading(false); } })(); }, []);
+  useEffect(() => { (async () => { try { setLoading(true); const r = await fetch('/api/batches'); const d = await r.json(); setBatches(d?.batches || []);} catch (err) { console.warn('Failed to fetch batches:', err); } finally { setLoading(false); } })(); }, []);
   const sample = useMemo(() => (batches || [])[0], [batches]);
 
   const fmt = (v?: number | string) => {

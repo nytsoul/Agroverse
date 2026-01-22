@@ -172,7 +172,7 @@ export default function WeatherAlertWidget() {
         setPressure(data.weather?.current?.main?.pressure || 1013);
         setVisibility(data.weather?.current?.visibility || 10000);
         setFeelsLike(data.weather?.current?.main?.feels_like || 29);
-      } catch (e: any) {
+      } catch (e: unknown) {
         if (cancelled) return;
         console.warn("Weather fetch error, using mock data:", e);
         // Use mock data on error
@@ -190,7 +190,10 @@ export default function WeatherAlertWidget() {
       }
     };
 
-    const useFallback = () => fetchWeather(FALLBACK_COORDS.lat, FALLBACK_COORDS.lon);
+    const handleFallback = () => {
+      setCoords(FALLBACK_COORDS);
+      fetchWeather(FALLBACK_COORDS.lat, FALLBACK_COORDS.lon);
+    };
 
     if (typeof navigator !== "undefined" && navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -200,14 +203,11 @@ export default function WeatherAlertWidget() {
           setCoords({ lat, lon });
           fetchWeather(lat, lon);
         },
-        () => {
-          setCoords(FALLBACK_COORDS);
-          useFallback();
-        },
+        handleFallback,
         { enableHighAccuracy: false, timeout: 6000 }
       );
     } else {
-      useFallback();
+      handleFallback();
     }
 
     return () => {
