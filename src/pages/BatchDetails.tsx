@@ -52,7 +52,9 @@ export default function BatchDetails() {
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ sessionId, batchId: id })
             })
-          } catch { }
+          } catch (err) {
+            console.warn('Payment confirmation failed:', err);
+          }
         }
         const res = await fetch(`/api/batch/${encodeURIComponent(id)}`)
         const text = await res.text()
@@ -343,7 +345,6 @@ export default function BatchDetails() {
                             <Calendar className="w-3 h-3" />
                             {step.dateLabel || 'Date'}: {new Date(step.date * 1000).toLocaleDateString()}
                           </Badge>
-                          {/* @ts-ignore */}
                           {step.expiryDate && (
                             <Badge variant="outline" className="w-fit flex items-center gap-1.5 font-mono text-xs text-red-600 border-red-200 bg-red-50">
                               <Calendar className="w-3 h-3" />

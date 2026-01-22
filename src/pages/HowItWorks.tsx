@@ -45,7 +45,9 @@ const HowItWorks = () => {
       const r = await fetch('/api/batches');
       const d = await r.json();
       setBatches(d?.batches || []);
-    } catch {}
+    } catch (err) {
+      console.warn('Failed to fetch batches:', err);
+    }
     finally { setLoading(false); }
   })(); }, []);
   const latest = useMemo(() => (batches || []).slice().sort((a,b)=>Number(b.createdAt||0)-Number(a.createdAt||0))[0], [batches]);

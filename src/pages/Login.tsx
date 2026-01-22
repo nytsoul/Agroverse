@@ -52,7 +52,7 @@ export default function Login() {
   }, [roleFromState, roleFromQuery]);
 
   useEffect(() => {
-    try { localStorage.setItem('lastRole', role); } catch { }
+    try { localStorage.setItem('lastRole', role); } catch (err) { console.warn('Failed to save role:', err); }
   }, [role]);
 
   const resetForm = () => {
