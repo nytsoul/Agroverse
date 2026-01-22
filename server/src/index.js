@@ -1,4 +1,5 @@
-import dotenv from 'dotenv'
+// Load environment variables FIRST (Node 22 + ESM compatible)
+import 'dotenv/config'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import express from 'express'
@@ -37,12 +38,11 @@ const DEFAULT_ADDRESSES = {
 const processedSessions = new Set()
 const processingSessions = new Set()
 
-// Load env from server/.env explicitly
+// Get current file and directory paths (ESM)
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-// Load env from server/.env explicitly (must be before reading process.env values below)
-dotenv.config({ path: path.resolve(__dirname, '../.env') })
 
+// MongoDB connection
 await connectDB().catch((err) => {
   console.error('MongoDB startup connection error', err)
   process.exit(1)
